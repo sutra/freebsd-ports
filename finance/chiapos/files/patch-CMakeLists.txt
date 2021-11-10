@@ -1,17 +1,21 @@
---- CMakeLists.txt.orig	2021-05-28 02:40:44 UTC
+--- CMakeLists.txt.orig	2021-10-10 05:43:05 UTC
 +++ CMakeLists.txt
-@@ -14,29 +14,7 @@ endif()
+@@ -14,33 +14,6 @@ endif()
  project(chiapos C CXX ASM)
  
  # CMake 3.14+
 -include(FetchContent)
- 
+-
+-if (${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
+-include(${CMAKE_INSTALL_PREFIX}/share/cmake/pybind11/pybind11Config.cmake)
+-else()
 -FetchContent_Declare(
 -  pybind11-src
 -  GIT_REPOSITORY https://github.com/pybind/pybind11.git
 -  GIT_TAG        v2.6.2
 -)
 -FetchContent_MakeAvailable(pybind11-src)
+-endif()
 -
 -FetchContent_Declare(
 -  cxxopts
@@ -30,7 +34,7 @@
  set(FSE_LIB ${CMAKE_CURRENT_SOURCE_DIR}/lib/FiniteStateEntropy/lib)
  set(FSE_FILES
      ${FSE_LIB}/fse_compress.c
-@@ -48,8 +26,8 @@ set(FSE_FILES
+@@ -52,8 +25,8 @@ set(FSE_FILES
  include_directories(
    ${INCLUDE_DIRECTORIES}
    ${CMAKE_CURRENT_SOURCE_DIR}/../lib/include
@@ -41,7 +45,7 @@
    ${CMAKE_CURRENT_SOURCE_DIR}/../lib/FiniteStateEntropy/lib
    ${CMAKE_CURRENT_SOURCE_DIR}/src
    ${CMAKE_CURRENT_SOURCE_DIR}/test
-@@ -130,8 +108,6 @@ set(BLAKE3_SRC
+@@ -134,8 +107,6 @@ set(BLAKE3_SRC
  )
  ENDIF()
  
@@ -50,7 +54,7 @@
  add_executable(ProofOfSpace
      src/cli.cpp
      src/chacha8.c
-@@ -145,33 +121,30 @@ add_executable(RunTests
+@@ -149,25 +120,24 @@ add_executable(RunTests
      ${BLAKE3_SRC}
  )
  
@@ -79,7 +83,7 @@
    target_link_libraries(ProofOfSpace fse Threads::Threads)
    target_link_libraries(RunTests fse Threads::Threads)
  elseif (MSVC)
--  target_link_libraries(chiapos PRIVATE fse Threads::Threads uint128)
+@@ -175,7 +145,6 @@ elseif (MSVC)
    target_link_libraries(ProofOfSpace fse Threads::Threads uint128)
    target_link_libraries(RunTests fse Threads::Threads uint128)
  else()
