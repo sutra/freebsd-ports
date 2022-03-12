@@ -1,8 +1,8 @@
 # Created by: Bernhard Froehlich <decke@bluelife.at>
 
 PORTNAME=	virtualbox-ose
-PORTVERSION=	6.1.28
-PORTREVISION=   1
+PORTVERSION=	6.1.32
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
@@ -36,9 +36,9 @@ CONFIGURE_ARGS=	--disable-java --passive-mesa
 CONFIGURE_ARGS+=	--with-gcc="${CC}" --with-g++="${CXX}"
 
 CONFLICTS_INSTALL=	virtualbox-ose-additions-* \
-			virtualbox-ose-devel-[0-9]* \
-			virtualbox-ose-legacy-[0-9]* \
-			virtualbox-ose-lite-[0-9]*
+			virtualbox-ose-devel \
+			virtualbox-ose-legacy \
+			virtualbox-ose-lite
 
 VBOXUSER?=	vboxusers
 VBOXWSUSER?=	vboxusers
@@ -52,6 +52,8 @@ VBOX_PROGS=	VBoxAutostart VBoxBalloonCtrl VBoxBugReport VBoxHeadless \
 		VBoxManage
 VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxNetNAT \
 		VBoxSVC VBoxXPCOMIPCD
+
+SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	AIO ALSA DBUS DEBUG GUESTADDITIONS MANUAL NLS OPUS PULSEAUDIO \
 		PYTHON QT5 R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
@@ -115,10 +117,10 @@ USE_RC_SUBR=	vboxheadless vboxwatchdog
 .include <bsd.port.options.mk>
 
 .if ${SLAVE_PORT} == no
-CONFLICTS_INSTALL+=	virtualbox-ose-nox11-[0-9]*
+CONFLICTS_INSTALL+=	virtualbox-ose-nox11
 OPTIONS_DEFAULT+=	PYTHON
 .else
-CONFLICTS_INSTALL+=	virtualbox-ose-[0-9]*
+CONFLICTS_INSTALL+=	virtualbox-ose
 .endif
 
 .if ${ARCH} == "amd64"
@@ -214,8 +216,8 @@ KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 # force llvm11 from ports
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300109
 BUILD_DEPENDS+=	clang${VBOX_LLVM_VER}:devel/llvm${VBOX_LLVM_VER}
-CC=		${LOCALBASE}/bin/clang${VBOX_LLVM_VER}
-CXX=		${LOCALBASE}/bin/clang++${VBOX_LLVM_VER}
+CC=		clang${VBOX_LLVM_VER}
+CXX=		clang++${VBOX_LLVM_VER}
 VBOX_LLVM_VER?=	11
 .endif
 PATCH_DEPENDS+=	${LOCALBASE}/share/kBuild/tools/GXX3.kmk:devel/kBuild
@@ -234,18 +236,18 @@ PLIST_SUB+=	PYTHON_PYCDIR=/ \
 CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}"
 .endif
 
-#pre-everything::
-#.if ${ARCH} == "amd64"
-#.if ${_ELF32} != yes
-#	@${ECHO_MSG} 'Requires 32-bit runtime support in kernel.'
-#	@${ECHO_MSG} 'Rebuild kernel with "options COMPAT_FREEBSD32" and reboot.'
-#	@${FALSE}
-#.elif !exists(/usr/lib32/libc.so)
-#	@${ECHO_MSG} 'Requires 32-bit libraries installed under /usr/lib32.'
-#	@${ECHO_MSG} 'Do: cd /usr/src; make build32 install32; service ldconfig restart'
-#	@${FALSE}
-#.endif
-#.endif
+pre-everything::
+.if ${ARCH} == "amd64"
+.if ${_ELF32} != yes
+	@${ECHO_MSG} 'Requires 32-bit runtime support in kernel.'
+	@${ECHO_MSG} 'Rebuild kernel with "options COMPAT_FREEBSD32" and reboot.'
+	@${FALSE}
+.elif !exists(/usr/lib32/libc.so)
+	@${ECHO_MSG} 'Requires 32-bit libraries installed under /usr/lib32.'
+	@${ECHO_MSG} 'Do: cd /usr/src; make build32 install32; service ldconfig restart'
+	@${FALSE}
+.endif
+.endif
 
 post-patch:
 	@${ECHO_CMD} 'VBOX_PATH_APP_PRIVATE_ARCH = ${VBOX_DIR}' > \
@@ -308,10 +310,12 @@ post-patch:
 	    ${LOCALBASE}/share/kBuild/tools/GXX3.kmk > \
 	    ${WRKSRC}/tools/kBuildTools/VBoxGccFreeBSD.kmk
 .endif
+	# Causes a "reinplace" QA warning with default LOCALBASE
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
 	    ${WRKSRC}/Config.kmk ${WRKSRC}/configure \
 	    ${WRKSRC}/kBuild/header.kmk ${WRKSRC}/kBuild/units/qt4.kmk \
 	    ${WRKSRC}/kBuild/units/qt5.kmk ${WRKSRC}/kBuild/sdks/LIBSDL.kmk \
+	    ${WRKSRC}/src/VBox/HostDrivers/adpctl/VBoxNetAdpCtl.cpp \
 	    ${WRKSRC}/src/libs/xpcom18a4/python/gen_python_deps.py
 	@${REINPLACE_CMD} \
 	    -e 's|\$$KBUILDDIR_BIN/kmk_sed|${LOCALBASE}/bin/kmk_sed|g' \
@@ -322,6 +326,7 @@ post-patch:
 	    ${WRKSRC}/src/VBox/Runtime/Makefile.kmk
 	@${ECHO_CMD} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
 .endif
+	# Causes a "reinplace" QA warning with default PREFIX/VBOX_DIR
 	@${REINPLACE_CMD} -e 's|/usr/local/lib/virtualbox|${VBOX_DIR}|' \
 	    -e 's|/usr/local|${PREFIX}|' \
 	    ${WRKSRC}/src/VBox/Installer/freebsd/VBox.sh
@@ -335,7 +340,7 @@ post-patch-AIO-off:
 
 do-build:
 	cd ${WRKSRC} && ${SH} -c '. ${WRKSRC}/env.sh && \
-	    ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}'
+	    ${SETENV} ${MAKE_ENV} ${KMK_CONFIG} ${LOCALBASE}/bin/kmk ${KMK_FLAGS}'
 .if ${PORT_OPTIONS:MPYTHON}
 	${PYTHON_CMD} -mcompileall \
 	    ${KMK_BUILDDIR}/bin/sdk/bindings/xpcom/python/xpcom

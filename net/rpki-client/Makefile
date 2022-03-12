@@ -1,5 +1,5 @@
 PORTNAME=	rpki-client
-DISTVERSION=	7.5
+DISTVERSION=	7.6
 CATEGORIES=	net
 
 MAINTAINER=	zeising@FreeBSD.org

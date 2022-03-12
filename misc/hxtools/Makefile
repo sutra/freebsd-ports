@@ -1,7 +1,7 @@
 # Created by: Alexey Dokuchaev <danfe@FreeBSD.org>
 
 PORTNAME=	hxtools
-PORTVERSION=	20210928
+PORTVERSION=	20211204
 CATEGORIES=	misc
 MASTER_SITES=	http://inai.de/files/hxtools/
 
@@ -33,6 +33,8 @@ SHEBANG_FILES=	data/hxtools_bashrc.bash data/hxtools_profile.bash \
 		suser/rezip suser/wktimer
 USE_PERL5=	run
 USE_XORG=	xcb
+
+CONFLICTS_INSTALL=	grx psptoolchain-pspsdk-stage2 # bin/bin2c
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

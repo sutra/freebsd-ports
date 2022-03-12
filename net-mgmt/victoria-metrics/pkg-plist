@@ -36,6 +36,8 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-k8s-via-vm-operator-grafana1.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-k8s-via-vm-operator-grafana2.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-k8s-via-vm-operator.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-multiple-retention-scheme.png
+%%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-multiple-retention-setup.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-vmagent-grafana-dash.png
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmcluster-vmagent-values.yaml
 %%PORTDOCS%%%%DOCSDIR%%/guides/guide-vmsingle-grafana-dashboards.png
@@ -46,5 +48,21 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/guides/k8s-ha-monitoring-via-vm-cluster.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/k8s-monitoring-via-vm-cluster.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/k8s-monitoring-via-vm-single.md
+%%PORTDOCS%%%%DOCSDIR%%/operator/README.md
+%%PORTDOCS%%%%DOCSDIR%%/operator/VictoriaMetrics-Operator.md
+%%PORTDOCS%%%%DOCSDIR%%/operator/additional-scrape.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/api.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/auth.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/backups.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/design.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/high-availability.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/operator/managing-versions.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/quick-start.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/relabeling.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/resources-validation.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/security.MD
+%%PORTDOCS%%%%DOCSDIR%%/operator/vars.MD
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
+%%PORTDOCS%%%%DOCSDIR%%/url-examples.md
 @dir(%%VICTORIA_USER%%,%%VICTORIA_GROUP%%,750) %%VICTORIA_DATA%%

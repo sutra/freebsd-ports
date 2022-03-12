@@ -13,7 +13,7 @@ COMMENT=	Multi-protocol soft switch for telephony applications
 
 LICENSE=	MPL11
 
-ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	gdiff:textproc/diffutils
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3 \
@@ -43,7 +43,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.-release
 
 SHEBANG_FILES=	scripts/fsxs.in
 
-CONFLICTS_BUILD=	xmlrpc-c-*
+CONFLICTS_BUILD=	xmlrpc-c
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=	--with-pkgconfigdir=${PREFIX}/libdata/pkgconfig \

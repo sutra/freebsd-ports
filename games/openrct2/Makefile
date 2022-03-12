@@ -1,6 +1,7 @@
 PORTNAME=	openrct2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.5
+DISTVERSION=	0.3.5.1
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -50,8 +51,8 @@ post-patch:
 
 post-install:
 	(cd ${WRKSRC_title_sequences}; \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/title)
+		${COPYTREE_SHARE}/title . ${STAGEDIR}${DATADIR}/title)
 	(cd ${WRKSRC_objects}; \
-		${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}/object)
+		${COPYTREE_SHARE}/objects . ${STAGEDIR}${DATADIR}/object)
 
 .include <bsd.port.mk>

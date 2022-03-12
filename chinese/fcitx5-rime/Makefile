@@ -1,10 +1,10 @@
 # Created by: Ka Ho Ng <khng300@gmail.com>
 
 PORTNAME=	fcitx5-rime
-DISTVERSION=	5.0.3
+DISTVERSION=	5.0.8
 CATEGORIES=	chinese textproc
 
-MAINTAINER=	khng300@gmail.com
+MAINTAINER=	khng@FreeBSD.org
 COMMENT=	RIME support for Fcitx5
 
 LICENSE=	LGPL21
@@ -22,6 +22,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fcitx
 
 USE_KDE=	ecm
+
+CONFLICTS_INSTALL=	zh-fcitx-rime # share/icons/hicolor/48x48/apps/fcitx-rime-deploy.png
 
 _SCHEMA_DEPENDS=	\
 	${LOCALBASE}/share/rime-data/luna_pinyin.schema.yaml:chinese/rime-luna-pinyin	\

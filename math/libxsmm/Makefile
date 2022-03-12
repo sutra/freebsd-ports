@@ -8,8 +8,7 @@ COMMENT=	Library for dense and sparse matrix operations and deep learning
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-ONLY_FOR_ARCHS=		amd64
-ONLY_FOR_ARCHS_REASON=	relies on hard-coded x86 code, and is only supported on 64-bit
+BROKEN_i386=	error: assigning to '__m256i' (vector of 4 'long long' values) from incompatible type 'int'
 
 BUILD_DEPENDS=	bash:shells/bash
 
@@ -26,6 +25,12 @@ LDFLAGS+=	-lm
 TEST_TARGET=	tests
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} != amd64
+MAKE_ARGS+=	PLATFORM=1
+.endif
 
 post-install: # https://github.com/hfp/libxsmm/issues/413
 	${RMDIR} ${STAGEDIR}${PREFIX}/share/modules

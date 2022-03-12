@@ -1,0 +1,15 @@
+PORTNAME=	bsddialog
+PORTVERSION=	0.0.0.g20211213
+CATEGORIES=	devel
+
+MAINTAINER=	bapt@FreeBSD.org
+COMMENT=	Text User Interface Widgets
+
+LICENSE=	BSD2CLAUSE
+
+USE_GITLAB=	yes
+GL_ACCOUNT=	alfix
+GL_COMMIT=	98afee468ccd515c9082dc668f80092ca4553825
+
+.include <bsd.port.mk>
+

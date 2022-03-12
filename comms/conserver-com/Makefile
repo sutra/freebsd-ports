@@ -1,6 +1,6 @@
 PORTNAME=	conserver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.2.4
+DISTVERSION=	8.2.6
 CATEGORIES=	comms
 PKGNAMESUFFIX=	-com
 
@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-master=${DEFAULTHOST} --with-port=${DEFAULTPORT} \
 		--with-pam --with-libwrap --with-openssl
 
-CONFLICTS_INSTALL=	conserver-[0-9]*
+CONFLICTS_INSTALL=	conserver
 
 OPTIONS_DEFINE=	FREEIPMI GSSAPI GSSAPIONLY STRIPREALM UDS
 FREEIPMI_DESC=	Compile in FreeIPMI support

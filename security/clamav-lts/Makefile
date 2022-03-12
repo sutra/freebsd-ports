@@ -1,5 +1,5 @@
 PORTNAME=	clamav
-PORTVERSION=	0.103.4
+PORTVERSION=	0.103.5
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.clamav.net/downloads/production/
@@ -35,7 +35,7 @@ CFLAGS_i386=	-march=i486
 # force to use -lthr until it's not fixed.
 LDFLAGS+=	-lthr
 
-CONFLICTS_INSTALL=	clamav-[0-9]*
+CONFLICTS_INSTALL=	clamav
 
 SUB_FILES=	pkg-deinstall
 SUB_LIST+=	CHMOD=${CHMOD} \

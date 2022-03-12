@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 
 CPE_VENDOR=	gnu
 
-CONFLICTS_INSTALL=	guile1-[0-9]* guile2-[0-9]*
+CONFLICTS_INSTALL=	guile1 guile2
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -45,11 +45,18 @@ THREADS_CONFIGURE_WITH=	threads
 THREADS_LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded
 THREADS_LIB_DEPENDS_OFF=	libgc.so:devel/boehm-gc
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-bootstrap_Makefile.in
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|sys/time.h sys/timeb.h|sys/time.h |g' \
 		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-i -e|-i.bak -e|' \
 		${WRKSRC}/libguile/Makefile.in
+	@${RM} -r ${WRKSRC}/prebuilt/32-bit-big-endian
 
 post-patch-THREADS-on:
 	@${REINPLACE_CMD} -e 's|bdw-gc|bdw-gc-threaded|g' ${WRKSRC}/configure

@@ -1,18 +1,17 @@
 # Created by: Bill Fumerola <billf@chc-chimes.com>
 
 PORTNAME?=	wireshark
-PORTVERSION=	3.4.9
-PORTREVISION=	1
+DISTVERSION=	3.6.2
 CATEGORIES=	net
-MASTER_SITES=	http://www.wireshark.org/download/src/ \
+MASTER_SITES=	https://1.na.dl.wireshark.org/src/ \
+		https://1.eu.dl.wireshark.org/src/ \
+		https://1.as.dl.wireshark.org/src/ \
+		https://2.na.dl.wireshark.org/src/ \
 		http://ftp.uni-kl.de/pub/wireshark/src/ \
-		http://wireshark.askapache.com/download/src/all-versions/ \
-		ftp://ftp.uni-kl.de/pub/wireshark/src/ \
-		http://prdownloads.sourceforge.net/wireshark/ \
 		http://ftp.yz.yamagata-u.ac.jp/pub/network/security/wireshark/src/ \
-		ftp://ftp.yz.yamagata-u.ac.jp/pub/network/security/wireshark/src/ \
-		http://wireshark.zing.org/download/src/
-DISTNAME=	${DATADIR_NAME}-${PORTVERSION}
+		https://wireshark.marwan.ma/download/src/ \
+		https://www.wireshark.org/download/src/
+DISTNAME=	${DATADIR_NAME}-${DISTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT?=	Powerful network analyzer/capture tool
@@ -20,7 +19,7 @@ COMMENT?=	Powerful network analyzer/capture tool
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL?=	wireshark-lite-[0-9]* tshark-[0-9]* tshark-lite-[0-9]*
+CONFLICTS_INSTALL?=	wireshark-lite tshark tshark-lite
 
 DATADIR_NAME=	wireshark
 DATADIR=	${PREFIX}/share/${DATADIR_NAME}
@@ -32,18 +31,19 @@ USE_PERL5=	build
 USE_GNOME=	glib20 libxml2
 USE_LDCONFIG=	yes
 
+BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
 LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error \
 		libgcrypt.so:security/libgcrypt \
 		liblz4.so:archivers/liblz4 \
 		libnghttp2.so:www/libnghttp2 \
 		libsnappy.so:archivers/snappy \
-		libcares.so:dns/c-ares
+		libcares.so:dns/c-ares \
+		libzstd.so:archivers/zstd
 
 #CFLAGS+=	-funit-at-a-time
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
-    reordercap captype randpktdump udpdump sharkd
+    reordercap captype randpktdump udpdump sharkd etwdump
 .if defined(LITE)
 PKGNAMESUFFIX=		-lite
 PLIST_SUB+=		${x:tu}="@comment $x not installed" \
@@ -91,7 +91,6 @@ GSSAPI_HEIMDAL_USES=	gssapi:heimdal
 GSSAPI_MIT_USES=		gssapi:mit
 
 RTP_LIB_DEPENDS=	libspandsp.so:comms/spandsp
-RTP_CPPFLAGS=		-I${LOCALBASE}/include
 MAXMIND_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 SNMP_LIB_DEPENDS=	libsmi.so:net-mgmt/libsmi
 DECRYPT_LIB_DEPENDS=	libgnutls.so:security/gnutls \
@@ -99,7 +98,6 @@ DECRYPT_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 SSHDUMP_LIB_DEPENDS=	libssh.so:security/libssh
 CISCODUMP_LIB_DEPENDS=	libssh.so:security/libssh
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
-OPUS_CPPFLAGS=		-I${LOCALBASE}/include
 
 GSSAPI_NONE_CMAKE_ON=	-DENABLE_KERBEROS=OFF
 GSSAPI_NONE_CMAKE_OFF=	-DENABLE_KERBEROS=ON

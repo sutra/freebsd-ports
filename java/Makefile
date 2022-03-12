@@ -18,6 +18,7 @@
     SUBDIR += berkeley-db
     SUBDIR += bluej
     SUBDIR += bootstrap-openjdk11
+    SUBDIR += bootstrap-openjdk17
     SUBDIR += bootstrap-openjdk6
     SUBDIR += bootstrap-openjdk8
     SUBDIR += bouncycastle
@@ -39,7 +40,6 @@
     SUBDIR += intellij
     SUBDIR += intellij-fsnotifier
     SUBDIR += intellij-pty4j
-    SUBDIR += intellij-rubymine
     SUBDIR += intellij-ultimate
     SUBDIR += jad
     SUBDIR += jai
@@ -96,6 +96,7 @@
     SUBDIR += openjdk15
     SUBDIR += openjdk16
     SUBDIR += openjdk17
+    SUBDIR += openjdk17-jre
     SUBDIR += openjdk7
     SUBDIR += openjdk7-jre
     SUBDIR += openjdk8

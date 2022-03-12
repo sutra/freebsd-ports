@@ -1,6 +1,5 @@
 PORTNAME=	bullet3
-DISTVERSION=	3.17
-PORTREVISION=	1
+DISTVERSION=	3.21
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,6 +18,8 @@ USE_GL=		gl glew
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bulletphysics
+
+CFLAGS_powerpc64=	-mvsx
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pybullet*.so

@@ -11,6 +11,7 @@
     SUBDIR += bcftools
     SUBDIR += bedtools
     SUBDIR += bfc
+    SUBDIR += bio-mocha
     SUBDIR += bioawk
     SUBDIR += biococoa
     SUBDIR += biolibc
@@ -77,6 +78,7 @@
     SUBDIR += kallisto
     SUBDIR += lamarc
     SUBDIR += libbigwig
+    SUBDIR += libgff
     SUBDIR += libgtextutils
     SUBDIR += libneurosim
     SUBDIR += libnuml
@@ -139,6 +141,7 @@
     SUBDIR += psi88
     SUBDIR += py-Genesis-PyAPI
     SUBDIR += py-PySCeS
+    SUBDIR += py-bcbio-gff
     SUBDIR += py-biom-format
     SUBDIR += py-biopython
     SUBDIR += py-bx-python
@@ -146,6 +149,7 @@
     SUBDIR += py-cutadapt
     SUBDIR += py-deeptools
     SUBDIR += py-deeptoolsintervals
+    SUBDIR += py-dna-features-viewer
     SUBDIR += py-dnaio
     SUBDIR += py-ete3
     SUBDIR += py-gffutils

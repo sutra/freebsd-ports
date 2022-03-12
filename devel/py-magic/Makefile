@@ -1,7 +1,7 @@
 # Created by: Alexander Botero-Lowry <alexbl@FreeBSD.org>
 
 PORTNAME=	magic
-PORTVERSION=	5.40
+PORTVERSION=	5.41
 CATEGORIES=	devel python
 MASTER_SITES=	https://astron.com/pub/file/ \
 		ftp://ftp.astron.com/pub/file/ \
@@ -20,7 +20,7 @@ USES=		python
 USE_PYTHON=	autoplist distutils
 
 # both install module as magic.py
-CONFLICTS=	${PYTHON_PKGNAMEPREFIX}python-magic-*
+CONFLICTS=	${PYTHON_PKGNAMEPREFIX}python-magic
 
 WRKSRC=	${WRKDIR}/file-${PORTVERSION}/python
 

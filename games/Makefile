@@ -21,6 +21,7 @@
     SUBDIR += OpenTomb
     SUBDIR += SRB2
     SUBDIR += SpaceCadetPinball
+    SUBDIR += SpaceCadetPinball-devel
     SUBDIR += abbayedesmorts
     SUBDIR += abe
     SUBDIR += abstreet
@@ -149,6 +150,7 @@
     SUBDIR += chroma
     SUBDIR += chromium-bsu
     SUBDIR += circuslinux
+    SUBDIR += cmatrix
     SUBDIR += cockatrice
     SUBDIR += coffeebreak
     SUBDIR += colobot
@@ -256,6 +258,7 @@
     SUBDIR += fightorperish
     SUBDIR += fillets-ng
     SUBDIR += filters
+    SUBDIR += fishfight
     SUBDIR += fishsupper
     SUBDIR += five-or-more
     SUBDIR += fkiss
@@ -275,6 +278,7 @@
     SUBDIR += fortunate
     SUBDIR += fotaq
     SUBDIR += four-in-a-row
+    SUBDIR += freebee
     SUBDIR += freeblocks
     SUBDIR += freecell-solver
     SUBDIR += freeciv
@@ -379,7 +383,6 @@
     SUBDIR += hitori
     SUBDIR += hllib
     SUBDIR += holotz-castle
-    SUBDIR += homura
     SUBDIR += hoverboard-sdl
     SUBDIR += hs-scroll
     SUBDIR += hypatia_engine
@@ -446,6 +449,7 @@
     SUBDIR += kobodeluxe
     SUBDIR += kodi-addon-game.libretro
     SUBDIR += kodi-addon-game.libretro.beetle-psx
+    SUBDIR += kodi-addon-game.libretro.fceumm
     SUBDIR += kodi-addon-game.libretro.genplus
     SUBDIR += kodi-addon-game.libretro.pcsx-rearmed
     SUBDIR += kodi-addon-game.libretro.picodrive
@@ -569,8 +573,6 @@
     SUBDIR += linux-ssamtfe
     SUBDIR += linux-ssamtse
     SUBDIR += linux-steam-utils
-    SUBDIR += linux-unigine-heaven
-    SUBDIR += linux-unigine-valley
     SUBDIR += linux-unrealgold
     SUBDIR += linux-ut
     SUBDIR += linux-ut2003-demo
@@ -592,7 +594,6 @@
     SUBDIR += madbomber
     SUBDIR += maelstrom
     SUBDIR += magiccube4d
-    SUBDIR += magicmaze
     SUBDIR += mahjong
     SUBDIR += maitretarot
     SUBDIR += manaplus
@@ -640,6 +641,7 @@
     SUBDIR += nazghul
     SUBDIR += nbsdgames
     SUBDIR += nehquake
+    SUBDIR += neo
     SUBDIR += neo-cowsay
     SUBDIR += nethack32
     SUBDIR += nethack33
@@ -905,6 +907,7 @@
     SUBDIR += slashem-tty
     SUBDIR += slump
     SUBDIR += sokoban
+    SUBDIR += sokobano
     SUBDIR += sol
     SUBDIR += solarconquest
     SUBDIR += solarus
@@ -926,13 +929,13 @@
     SUBDIR += stockfish
     SUBDIR += stonesoup
     SUBDIR += stormbaancoureur
-    SUBDIR += stransball2
     SUBDIR += stratagus
     SUBDIR += stuntrally
     SUBDIR += sudsol
     SUBDIR += supertux
     SUBDIR += supertux2
     SUBDIR += supertuxkart
+    SUBDIR += suyimazu
     SUBDIR += swell-foop
     SUBDIR += sxsame
     SUBDIR += tads
@@ -954,6 +957,7 @@
     SUBDIR += thegrind
     SUBDIR += tileworld
     SUBDIR += tkmoo
+    SUBDIR += tmatrix
     SUBDIR += tomatoes
     SUBDIR += tome4
     SUBDIR += tome4-beta
@@ -973,7 +977,6 @@
     SUBDIR += trimines
     SUBDIR += triplane
     SUBDIR += trojka
-    SUBDIR += trophy
     SUBDIR += tsito
     SUBDIR += tt
     SUBDIR += ttt
@@ -1028,6 +1031,7 @@
     SUBDIR += wesnoth
     SUBDIR += whichwayisup
     SUBDIR += widelands
+    SUBDIR += wipeclean
     SUBDIR += wizznic
     SUBDIR += wmpuzzle
     SUBDIR += wmqstat
@@ -1103,7 +1107,6 @@
     SUBDIR += xmulti
     SUBDIR += xneko
     SUBDIR += xnethack
-    SUBDIR += xnethack-nox11
     SUBDIR += xoct
     SUBDIR += xoids
     SUBDIR += xoj

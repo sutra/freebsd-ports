@@ -1,8 +1,8 @@
 # Created by: Devon H. O'Dell <devon.odell@gmail.com>
 
-PORTVERSION=	g20211105
+PORTVERSION=	g20220218
 # Always set PORTREVISION and PORTEPOCH explicitly as otherwise they are inherited from lang/go
-PORTREVISION=	1
+PORTREVISION=	0
 PORTEPOCH=	0
 MASTER_SITES=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap \
 		LOCAL/dmgk:bootstrap
@@ -16,7 +16,7 @@ COMMENT=	Go programming language (development version)
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
-GH_TAGNAME=	f58c78a5771570667b26e8c74faa017bd4c2c448
+GH_TAGNAME=	cb5a598d7f2ebd276686403d141a97c026d33458
 
 CONFLICTS_INSTALL=	go
 

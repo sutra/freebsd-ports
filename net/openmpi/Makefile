@@ -1,15 +1,13 @@
 PORTNAME=	openmpi
-PORTVERSION=	4.1.1
+PORTVERSION=	4.1.2
 CATEGORIES=	net parallel
 MASTER_SITES=	http://www.open-mpi.org/software/ompi/v${PORTVERSION:R}/downloads/
 
-MAINTAINER=	danilo@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High Performance Message Passing Library
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_sparc64=		fails to compile on sparc64
 
 LIB_DEPENDS=	libhwloc.so.15:devel/hwloc2 \
 		libltdl.so:devel/libltdl \
@@ -37,6 +35,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}/${MPIDIR} \
 			--program-prefix= \
 			--with-hwloc=external \
 			--with-libltdl \
+			--without-ofi \
 			--enable-mpi-fortran=usempi \
 			--enable-mpi-cxx \
 			--enable-cxx-exceptions \

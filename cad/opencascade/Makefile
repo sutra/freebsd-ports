@@ -2,6 +2,7 @@
 
 PORTNAME=	opencascade
 PORTVERSION=	7.6.0
+PORTREVISION=	2
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -40,7 +41,7 @@ SHEBANG_FILES=	adm/templates/*.sh	\
 		gendoc
 ENVSH=		adm/templates/env.sh
 
-VTKVER=		9.0
+VTKVER=		9.1
 
 OPTIONS_DEFINE=	DOCS DOXYGEN FFMPEG VIS
 VIS_DESC=	Build Visualizazion module (requires OpenGL, freetype, ftgl)
@@ -48,7 +49,7 @@ OPTIONS_DEFAULT=FFMPEG VIS
 OPTIONS_SUB=	yes
 
 REINPLACE_ARGS=	-i ""
-LDFLAGS+=	-Wl,--allow-shlib-undefined
+LDFLAGS+=	-Wl,--allow-shlib-undefined -lexecinfo
 CMAKE_ARGS+=	-DINSTALL_DIR=${OCCROOT}				\
 		-DINSTALL_DIR_INCLUDE=${PREFIX}/include/OpenCASCADE	\
 		-DINSTALL_DIR_LIB=${PREFIX}/lib				\
@@ -70,6 +71,8 @@ CMAKE_ARGS+=	-DINSTALL_DIR=${OCCROOT}				\
 #LIB_DEPENDS+=	libtbb.so:devel/tbb
 
 USE_LDCONFIG=	yes
+
+CONFLICTS_INSTALL=	opencascade740 # OpenCAS/bin/DRAWEXE
 
 LOCCROOT=	OpenCAS
 OCCROOT=	${PREFIX}/${LOCCROOT}

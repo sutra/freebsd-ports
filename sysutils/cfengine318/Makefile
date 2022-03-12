@@ -1,8 +1,7 @@
 # Created by: jrhett@netconsonance.com
 
 PORTNAME=	cfengine
-PORTVERSION=	3.18.0
-PORTREVISION=	1
+PORTVERSION=	3.18.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://s3.amazonaws.com/cfengine-package-repos/tarballs/
 
@@ -15,10 +14,9 @@ LICENSE=	GPLv3
 
 CPE_VENDOR=	gnu
 
-CONFLICTS=	cfengine3[0-9]-* cfengine31[0-79]-*
+CONFLICTS=	cfengine cfengine3[0-9] cfengine3[0-9][0-9]
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	318
-CONFLICTS+=	cfengine-3.*
 .endif
 
 FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}

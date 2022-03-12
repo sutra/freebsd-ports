@@ -1,6 +1,6 @@
 PORTNAME=	deal.II
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.3.1
+DISTVERSION=	9.3.2
 PORTREVISION=	2
 CATEGORIES=	math
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libhdf5.so:science/hdf5 \
 		libmetis.so:math/metis
 
-USES=		blaslapack cmake compiler:c++17-lang localbase:ldflags
+USES=		blaslapack cmake:testing compiler:c++17-lang localbase:ldflags
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -29,6 +29,7 @@ CMAKE_OFF=	DEAL_II_ALLOW_BUNDLED DEAL_II_COMPONENT_EXAMPLES \
 		DEAL_II_WITH_NANOFLANN DEAL_II_WITH_MUPARSER DEAL_II_WITH_ASSIMP \
 		DEAL_II_WITH_HDF5
 CMAKE_ON=	DEAL_II_FORCE_BUNDLED_TBB # instead of LIB_DEPENDS+=libtbb.so:devel/onetbb, pending https://github.com/dealii/dealii/issues/11561
+CMAKE_TESTING_ON=	FREEBSD_ENABLE_TESTS
 
 OPTIONS_DEFINE=		ADOLC ARPACK GSL LAPACK MPI NETCDF OPENCASCADE PETSC SCALAPACK SUNDIALS
 OPTIONS_DEFAULT=	GSL LAPACK # SUNDIALS

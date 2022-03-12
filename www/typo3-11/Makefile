@@ -5,6 +5,7 @@ PORTVERSION=	${PORT_V_MAJOR}.${PORT_V_MINOR}.${PORT_V_PATCH}
 CATEGORIES=	www
 MASTER_SITES=	https://typo3.azureedge.net/typo3/${PORTVERSION}/
 PKGNAMESUFFIX=	-${PORT_V_MAJOR}${PHP_PKGNAMESUFFIX}
+DISTNAME=	${TYPO3SRC}
 
 MAINTAINER=	freebsd-ports@charlieroot.de
 COMMENT=	Typo3 content management system
@@ -12,19 +13,26 @@ COMMENT=	Typo3 content management system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+IGNORE_WITH_PHP=       73
+IGNORE_WITH_MYSQL=     55 56 101m
+
 USES=		cpe php:web,flavors shebangfix
 USE_PHP=	ctype dom fileinfo filter hash intl json openssl pcre session simplexml \
 		spl tokenizer xml zip
 
 WRKSRC=		${WRKDIR}/${TYPO3SRC}
-NO_BUILD=	yes
-NO_ARCH=	yes
 SHEBANG_GLOB=	*.sh *.php
+NO_ARCH=	yes
+NO_BUILD=	yes
 PORTSCOUT=	limit:^${PORT_V_MAJOR}\.${PORT_V_MINOR}\.
+SUB_FILES=	pkg-message
+SUB_LIST+=	PREFIX=${PREFIX} \
+		TYPO3WWW=${TYPO3WWW} \
+		TYPO3DIR=${TYPO3DIR}
 
 PORT_V_MAJOR=	11
 PORT_V_MINOR=	5
-PORT_V_PATCH=	0
+PORT_V_PATCH=	7
 
 TYPO3WWW=	www
 TYPO3SRC=	${PORTNAME}_src-${PORTVERSION}
@@ -32,13 +40,6 @@ TYPO3DIR=	${PORTNAME}-${PORT_V_MAJOR}
 
 USERS=		${WWWOWN}
 GROUPS=		${WWWGRP}
-
-SUB_FILES=	pkg-message
-SUB_LIST+=	PREFIX=${PREFIX} \
-		TYPO3WWW=${TYPO3WWW} \
-		TYPO3DIR=${TYPO3DIR}
-
-DISTFILES+=	${TYPO3SRC}${EXTRACT_SUFX}
 
 OPTIONS_DEFINE=	CURL GD GMP IMAGICK MBSTRING MYSQL POSTGRES SQLSRV SQLITE ZLIB
 OPTIONS_DEFAULT=MYSQL
@@ -57,16 +58,16 @@ MBSTRING_USE=	PHP=mbstring
 MYSQL_USE=	PHP=mysqli
 POSTGRES_USE=	PHP=postgresql
 SQLSRV_USE=	PHP=sqlsrv
-SQLITE_USE=	PHP=sqlite
+SQLITE_USE=	PHP=sqlite3
 ZLIB_USE=	PHP=zlib
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MIMAGICK}
 .if ${PORT_OPTIONS:MX11}
-RUN_DEPENDS+=	convert:graphics/ImageMagick7
+USES+=		magick:7,run
 .else
-RUN_DEPENDS+=	convert:graphics/ImageMagick7-nox11
+USES+=		magick:7,run,nox11
 .endif
 .endif
 

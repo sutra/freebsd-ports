@@ -12,14 +12,15 @@ COMMENT=	Command line editor library
 
 LICENSE=	BSD2CLAUSE
 
-USES=		libtool localbase ncurses pathfix
+USES=		cpe libtool localbase ncurses pathfix
 EDITVERSION=	3.1
-EDITDATE=	20210216
+EDITDATE=	20210910
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
+CPE_VENDOR=	libedit_project
 
-CONFLICTS_INSTALL=	editline-*
+CONFLICTS_INSTALL=	editline
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/man/man3/history.3 ${STAGEDIR}${PREFIX}/man/man3/el_history.3

@@ -1,25 +1,28 @@
 # We follow the stable channel on https://omahaproxy.appspot.com/
-# https://chromium.googlesource.com/v8/v8/+/refs/heads/9.5-lkgr
+# https://chromium.googlesource.com/v8/v8/+/refs/heads/9.8-lkgr
 
 PORTNAME=	v8
-PORTVERSION=	9.5.172.21
+PORTVERSION=	9.8.177.9
 CATEGORIES=	lang
 MASTER_SITES=	LOCAL/sunpoet/v8/${PORTVERSION:R:R}
-DISTFILES=	build-${BUILD_REV}.tar.gz \
+DISTFILES=	v8-${PORTVERSION}.tar.gz \
+		build-${BUILD_REV}.tar.gz \
 		buildtools-${BUILDTOOLS_REV}.tar.gz \
 		clang-${CLANG_REV}.tar.gz \
 		common-${COMMON_REV}.tar.gz \
 		googletest-${GOOGLETEST_REV}.tar.gz \
 		icu-${ICU_REV}.tar.gz \
 		zlib-${ZLIB_REV}.tar.gz
-EXTRACT_ONLY=	${DISTNAME}.tar.gz
 DIST_SUBDIR=	v8/${PORTVERSION:R:R}
+EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open source JavaScript engine by Google
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 BUILD_DEPENDS=	binutils>=0:devel/binutils \
 		gn:devel/gn \
@@ -31,23 +34,22 @@ USE_GNOME=	glib20
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 MAKE_ARGS=	-C out/Release
+NO_WRKSUBDIR=	yes
 USE_LDCONFIG=	yes
 
 SUB_FILES=	v8.pc v8_libbase.pc v8_libplatform.pc
-
-USE_GITHUB=	yes
 
 CPE_VENDOR=	google
 
 CONFLICTS_INSTALL=	v8-beta
 
-BUILD_REV=	17d097b0ffdc297f04afb54e9e3abff3f1203f06
-BUILDTOOLS_REV=	7ea3a871db68ae2cbbeaf5433a3192a799ef3c11
-CLANG_REV=	664e4259b150e07f1a1e440459f59fbc68edb82f
-COMMON_REV=	715537d6007ca71837f48bcb04fc3d482aed2507
-GOOGLETEST_REV=	955c7f837efad184ec63e771c42542d37545eaef
-ICU_REV=	ece15d049f2d360721716089372e3749fb89e0f4
-ZLIB_REV=	77c132322fe81a1f5518b326e18c99ebd3281627
+BUILD_REV=	9cfc74504f0c5093fe6799e70f15bded2423b5b4
+BUILDTOOLS_REV=	075dd7e22837a69189003e4fa84499acf63188cf
+CLANG_REV=	336fcfd099995c128bc93e97b8263cc6fc891cc8
+COMMON_REV=	7f36dbc19d31e2aad895c60261ca8f726442bfbb
+GOOGLETEST_REV=	4c5650f68866e3c2e60361d5c4c95c6f335fb64b
+ICU_REV=	edf883ad2db9c723b058a6a17a146d68d6343143
+ZLIB_REV=	efd9399ae01364926be2a38946127fdf463480db
 
 # Run "gn args --list out/Release" for all variables.
 # Some parts don't have use_system_* flag, and can be turned on/off by using
@@ -76,7 +78,7 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -i '' 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/build/toolchain/gcc_toolchain.gni ${WRKSRC}/buildtools/third_party/libc++/BUILD.gn
 	# https://github.com/klzgrad/naiveproxy/blob/master/src/build/config/gclient_args.gni
-	${ECHO_CMD} 'checkout_google_benchmark = false' > ${WRKSRC}/build/config/gclient_args.gni
+	@${ECHO_CMD} 'checkout_google_benchmark = false' > ${WRKSRC}/build/config/gclient_args.gni
 
 # Use ICU from ports and create needed directory
 pre-configure:

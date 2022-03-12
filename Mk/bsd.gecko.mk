@@ -67,6 +67,9 @@ USE_GL=		gl
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_PERL5=	build
 USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrender xt
+.if ${MOZILLA_VER:R:R} >= 96
+USE_XORG+=	xrandr xtst
+.endif
 HAS_CONFIGURE=	yes
 CONFIGURE_OUTSOURCE=	yes
 LDFLAGS+=		-Wl,--as-needed
@@ -76,7 +79,7 @@ BUNDLE_LIBS=	yes
 
 BUILD_DEPENDS+=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
 				rust-cbindgen>=0.19.0:devel/rust-cbindgen \
-				${RUST_DEFAULT}>=1.56.0:lang/${RUST_DEFAULT} \
+				${RUST_DEFAULT}>=1.58.1:lang/${RUST_DEFAULT} \
 				node:www/node
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 RUN_DEPENDS+=	${LOCALBASE}/lib/libpci.so:devel/libpci
@@ -95,6 +98,7 @@ MOZ_EXPORT+=	LLVM_OBJDUMP="${LOCALBASE}/bin/llvm-objdump${LLVM_DEFAULT}"
 # Ignore Mk/bsd.default-versions.mk but respect make.conf(5) unless LTO is enabled
 .if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mllvm*} || ${PORT_OPTIONS:MLTO}
 LLVM_DEFAULT=	13 # chase bundled LLVM in lang/rust for LTO
+LLVM_VERSION=	13.0.1 # keep in sync with devel/wasi-compiler-rt${LLVM_DEFAULT}
 .endif
 # Require newer Clang than what's in base system unless user opted out
 . if ${CC} == cc && ${CXX} == c++ && exists(/usr/lib/libc++.so)
@@ -123,9 +127,12 @@ RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/}
 # Standard depends
 _ALL_DEPENDS=	av1 event ffi graphite harfbuzz icu jpeg nspr nss png pixman sqlite vpx webp
 
+# firefox 95 uses a dav1d snapshot > 0.9.2
+.if ${MOZILLA_VER:R:R} < 95
 .if exists(${FILESDIR}/patch-bug1559213)
 av1_LIB_DEPENDS=	libaom.so:multimedia/aom libdav1d.so:multimedia/dav1d
 av1_MOZ_OPTIONS=	--with-system-av1
+.endif
 .endif
 
 event_LIB_DEPENDS=	libevent.so:devel/libevent
@@ -160,6 +167,9 @@ pixman_MOZ_OPTIONS=	--enable-system-pixman
 
 png_LIB_DEPENDS=	libpng.so:graphics/png
 png_MOZ_OPTIONS=	--with-system-png=${LOCALBASE}
+.if ${MOZILLA_VER:R:R} >= 97
+png_MOZ_OPTIONS=	--with-system-png
+.endif
 
 sqlite_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 sqlite_MOZ_OPTIONS=	--enable-system-sqlite

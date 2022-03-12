@@ -1,7 +1,7 @@
 #_ Created by: Alex Trull <freebsd.alex@trull.org>
 
 PORTNAME=	scummvm
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	games emulators
 MASTER_SITES=	https://downloads.scummvm.org/frs/${PORTNAME}/${PORTVERSION}/
 

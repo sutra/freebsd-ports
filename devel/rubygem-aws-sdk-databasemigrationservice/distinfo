@@ -1,3 +1,3 @@
-TIMESTAMP = 1636117400
-SHA256 (rubygem/aws-sdk-databasemigrationservice-1.61.0.gem) = 4bed223dc760a00f1146194b43f2504289ea1e66ad3772b7247cf6ca0cc08165
-SIZE (rubygem/aws-sdk-databasemigrationservice-1.61.0.gem) = 141312
+TIMESTAMP = 1646058344
+SHA256 (rubygem/aws-sdk-databasemigrationservice-1.67.0.gem) = de176dd72fe52b8e2c3413a930f15c21e741c1d6f62d6c1b478ae5399784c578
+SIZE (rubygem/aws-sdk-databasemigrationservice-1.67.0.gem) = 144384

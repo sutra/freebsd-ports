@@ -1,9 +1,9 @@
 # Created by: Emanuel Haupt <ehaupt@FreeBSD.org>
 
 PORTNAME=	nagstamon
-PORTVERSION=	3.6.0
+PORTVERSION=	3.8.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -26,8 +26,7 @@ CPE_VENDOR=	henri_wahl
 USE_GITHUB=	yes
 GH_ACCOUNT=	HenriWahl
 GH_PROJECT=	Nagstamon
-USE_PYQT=	core_run dbus_run gui_run multimedia_run network_run sip_run \
-		svg_run widgets_run
+USE_PYQT=	pyqt5_run sip_run
 USE_PYTHON=	autoplist distutils noflavors
 
 NO_ARCH=	yes

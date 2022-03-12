@@ -1,16 +1,17 @@
 PORTNAME=	emby-server
-PORTVERSION=	4.6.4.0
-PORTREVISION=	2
+DISTVERSION=	4.6.7.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${PORTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
 DISTNAME=	embyserver-netframework_${PORTVERSION}
 DISTFILES=	${DISTNAME}.zip \
-		ffdetect-${FFVERSION}-x64_freebsd12.tar.xz \
+		ffdetect-${FFVERSION}-x64_freebsd13.tar.xz \
 		ffmpeg-${FFVERSION}.tar.gz \
 		license.docx
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTNAME}.zip ffdetect-${FFVERSION}-x64_freebsd12.tar.xz \
+EXTRACT_ONLY=	${DISTNAME}.zip \
+		ffdetect-${FFVERSION}-x64_freebsd13.tar.xz \
 		ffmpeg-${FFVERSION}.tar.gz
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -24,7 +25,9 @@ LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	nasm:devel/nasm
-LIB_DEPENDS=	libass.so:multimedia/libass \
+LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
+		libass.so:multimedia/libass \
+		libdav1d.so:multimedia/dav1d \
 		libdrm.so:graphics/libdrm \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -65,7 +68,9 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--enable-gnutls \
 		--enable-gpl \
 		--enable-iconv \
+		--enable-libaribb24 \
 		--enable-libass \
+		--enable-libdav1d \
 		--enable-libdrm \
 		--enable-libfreetype \
 		--enable-libfribidi \
@@ -85,6 +90,8 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 
 MAKE_ENV=	V=1
 
+CONFLICTS_INSTALL=	emby-server-devel
+
 NOPRECIOUSMAKEVARS=	yes
 SUB_FILES=	ImageMagickSharp.dll.config \
 		SQLitePCLRaw.provider.sqlite3.dll.config
@@ -98,21 +105,17 @@ WRKSRC=		${WRKDIR}/ffmpeg-${FFVERSION}_public
 USERS=		emby
 GROUPS=		emby
 
-OPTIONS_DEFINE=		LAME SMB X11
-OPTIONS_DEFAULT=	LAME SMB X11
+OPTIONS_DEFINE=		LAME X11
+OPTIONS_DEFAULT=	LAME X11
 
 LAME_LIB_DEPENDS=	libmp3lame.so:audio/lame
 LAME_CONFIGURE_ENABLE=	libmp3lame
 
-SMB_USES=		samba:lib
-SMB_CONFIGURE_ENABLE=	libsmbclient
-
-X11_LIB_DEPENDS=	libMagickWand-6.so:graphics/ImageMagick6
-X11_LIB_DEPENDS_OFF=	libMagickWand-6.so:graphics/ImageMagick6-nox11
-X11_USES=		xorg
+X11_USES=		xorg magick:6
+X11_USES_OFF=		magick:6,nox11
 X11_USE=		xorg=x11
 
-FFVERSION=	2020_05_23
+FFVERSION=	2021_02_27
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/emby-server/system

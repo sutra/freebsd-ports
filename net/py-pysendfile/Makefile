@@ -7,13 +7,13 @@ CATEGORIES=	net python devel
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python interface to sendfile(2)
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS_INSTALL=	py*-sendfile-[0-9]*
+CONFLICTS_INSTALL=	py*-sendfile
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist

@@ -1,5 +1,5 @@
 PORTNAME=	clamav
-DISTVERSION=	0.104.1
+DISTVERSION=	0.104.2
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	https://www.clamav.net/downloads/production/
@@ -25,7 +25,7 @@ CMAKE_ON=	ENABLE_EXTERNAL_MSPACK
 
 TEST_TARGET=	check
 
-CONFLICTS_INSTALL=	clamav-[0-9]*
+CONFLICTS_INSTALL=	clamav-lts
 
 SUB_FILES=	pkg-message
 SUB_LIST+=	CHMOD=${CHMOD} \
@@ -81,8 +81,8 @@ TESTS_CMAKE_BOOL=		ENABLE_TESTS
 UNRAR_CMAKE_BOOL=		ENABLE_UNRAR
 UNZOO_RUN_DEPENDS=		unzoo:archivers/unzoo
 
-_CLAMAVUSER=	clamav
-_CLAMAVGROUP=	clamav
+_CLAMAVUSER?=	clamav
+_CLAMAVGROUP?=	clamav
 
 _CLAMAV_CLAMD_SOCKET?=	${_RUNDIR}/clamd.sock
 _CLAMAV_CLAMD_PIDFILE?=	${_RUNDIR}/clamd.pid

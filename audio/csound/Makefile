@@ -2,7 +2,7 @@
 
 PORTNAME=	csound
 DISTVERSION=	6.15.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio lang
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,6 +22,8 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	csounds
+
+CONFLICTS_INSTALL= clearsilver go-cs libextractor outguess
 
 CFLAGS_powerpc=	-maltivec
 CFLAGS_powerpcspe=	-DPFFFT_SIMD_DISABLE

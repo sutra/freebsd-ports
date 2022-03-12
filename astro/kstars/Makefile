@@ -1,5 +1,6 @@
 PORTNAME=	kstars
-DISTVERSION=	3.5.5
+DISTVERSION=	3.5.7
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	astro kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
@@ -8,7 +9,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE desktop planetarium
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+
+EXTRA_PATCHES=	${PATCHDIR}/bef3940aaceb1ba574687a4817ef829a04d49dd4.patch:-p1
 
 LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libindidriver.so:devel/indi \
@@ -33,9 +35,5 @@ USE_QT=		concurrent core datavis3d dbus declarative gui multimedia \
 		network opengl printsupport sql svg testlib websockets widgets \
 		xml \
 		buildtools_build qmake_build
-
-post-extract:
-	# KDE Bug https://bugs.kde.org/show_bug.cgi?id=439541
-	${RM} ${WRKSRC}/po/de/docs/kstars/index.docbook
 
 .include <bsd.port.mk>

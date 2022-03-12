@@ -2,8 +2,7 @@
 
 PORTNAME=	cmake
 # Remember to update devel/cmake-doc and devel/cmake-gui as well.
-DISTVERSION=	3.21.4
-PORTREVISION=	1
+DISTVERSION=	3.22.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/Kitware/CMake/releases/download/v${DISTVERSION}/ \
 		https://www.cmake.org/files/v${PORTVERSION}/
@@ -44,8 +43,6 @@ CPACK_DESC=		Enable FreeBSD generator in CPack (experimental)
 CPACK_LIB_DEPENDS=	libpkg.so:${PKG_ORIGIN}
 CPACK_USES_OFF=		libarchive
 # When CPACK is on, uses base libarchive and won't pass stage-qa
-
-CONFLICTS_INSTALL=	cmake-modules-*
 
 CXXFLAGS+=	-D__BSD_VISIBLE
 

@@ -1,5 +1,5 @@
 PORTNAME=	ansible
-DISTVERSION=	4.7.0
+DISTVERSION=	5.4.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,17 +23,17 @@ SHEBANG_FILES=	ansible_collections/community/zabbix/roles/zabbix_proxy/files/ins
 		ansible_collections/ovirt/ovirt/roles/disaster_recovery/files/ovirt-dr
 SHEBANG_GLOB=	*.py *.sh
 
-CONFLICTS_INSTALL=	${_ANSIBLE_PACKAGES:N${PKGBASE}-*}
+CONFLICTS_INSTALL=	${_ANSIBLE_PACKAGES:N${PKGBASE}}
 
 NO_ARCH=	yes
 
 DO_MAKE_TEST=	ansible -m ping
 TEST_TARGET=	localhost
 
-_ANSIBLE_VERSIONS=	1 2 23 24 25 26 27 28
-_ANSIBLE_PACKAGES=	${PYTHON_PKGNAMEPREFIX}ansible-*
+_ANSIBLE_VERSIONS=	1 2 23 24 25 26 27 28 4
+_ANSIBLE_PACKAGES=	${PYTHON_PKGNAMEPREFIX}ansible
 .for version in ${_ANSIBLE_VERSIONS}
-_ANSIBLE_PACKAGES+=	${PYTHON_PKGNAMEPREFIX}ansible${version}-*
+_ANSIBLE_PACKAGES+=	${PYTHON_PKGNAMEPREFIX}ansible${version}
 .endfor
 
 post-patch:

@@ -6,8 +6,8 @@ CATEGORIES=		security
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=		-devel
 .endif
-HASH=			b0e74f60b
-MIT_COMMIT_DATE=	2021.11.05
+HASH=			922592d3f
+MIT_COMMIT_DATE=	2022.03.02
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
@@ -20,8 +20,7 @@ LICENSE=		MIT
 USE_GITHUB=		yes
 GH_TAGNAME=		${HASH}
 
-CONFLICTS=		heimdal srp krb5-11[345] \
-			krb5-1.[0-9]*
+CONFLICTS=		heimdal krb5 krb5-*
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_PERL5=		build

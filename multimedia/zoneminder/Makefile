@@ -1,13 +1,11 @@
 PORTNAME=	zoneminder
-DISTVERSION=	1.36.5
+DISTVERSION=	1.36.12
 CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru
 COMMENT=	Complete security camera solution, fully web based with image analysis
 
 LICENSE=	GPLv2
-
-ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc powerpc64 powerpc64le
 
 ZM_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 		p5-DBD-mysql>=0:databases/p5-DBD-mysql \
@@ -37,7 +35,7 @@ RUN_DEPENDS=	${ZM_DEPENDS} \
 
 USES=		cmake:insource,noninja cpe jpeg mysql perl5 php shebangfix ssl
 USE_GITHUB=	yes
-GH_TUPLE=	FriendsOfCake:crud:0bd63fb:crud/web/api/app/Plugin/Crud \
+GH_TUPLE=	FriendsOfCake:crud:1429237:crud/web/api/app/Plugin/Crud \
 		ZoneMinder:CakePHP-Enum-Behavior:ea90c0c:crud_plugin/web/api/app/Plugin/CakePHP-Enum-Behavior \
 		ZoneMinder:RtspServer:cd7fd49:rtsp_server/dep/RtspServer
 USE_RC_SUBR=	zoneminder

@@ -184,26 +184,6 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
          if (!FCL_IGC_IS_FLAG_ENABLED(DumpToCurrentDir) && g_shaderOutputFolder == "" && !FCL_IGC_IS_FLAG_ENABLED(DumpToCustomDir))
          {
              bool needMkdir = true;
---- IGC/VectorCompiler/lib/Driver/SPIRVWrapper.cpp.orig	2021-04-20 09:14:00 UTC
-+++ IGC/VectorCompiler/lib/Driver/SPIRVWrapper.cpp
-@@ -47,7 +47,7 @@ IN THE SOFTWARE.
- #include "llvm/Support/DynamicLibrary.h"
- #include "llvm/Support/Path.h"
- #include "llvm/Support/Process.h"
--#if defined(__linux__)
-+#if !defined(_WIN32)
- #include <dlfcn.h>
- #endif // __linux__
- #if defined(_WIN32)
-@@ -171,7 +171,7 @@ Expected<SpirvReadVerifyType *> getSpirvReadVerifyFunc
-   constexpr char *SpirvReadVerifyName = "spirv_read_verify_module";
- 
-   const std::string SpirvLibPath = findSpirvDLL();
--#if defined(__linux__)
-+#if defined(RTLD_DEEPBIND)
-   // Hack to workaround cmoc crashes during loading of SPIRV library
-   static auto DeepBindHack =
-       dlopen(SpirvLibPath.c_str(), RTLD_NOW | RTLD_DEEPBIND);
 --- IGC/common/LLVMWarningsPop.hpp.orig	2021-05-12 10:04:39 UTC
 +++ IGC/common/LLVMWarningsPop.hpp
 @@ -41,6 +41,6 @@ SPDX-License-Identifier: MIT
@@ -225,12 +205,12 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
  #   pragma GCC diagnostic push
  #   if __GNUC__ > 8
  #       pragma GCC diagnostic ignored "-Winit-list-lifetime"
---- IGC/common/Stats.cpp.orig	2021-03-22 09:55:24 UTC
+--- IGC/common/Stats.cpp.orig	2022-01-28 10:30:23 UTC
 +++ IGC/common/Stats.cpp
-@@ -1061,7 +1061,7 @@ void TimeStats::printTimeCSV( std::string const& corpu
+@@ -1045,7 +1045,7 @@ void TimeStats::printTimeCSV( std::string const& corpu
      else
          subFile += IGC::Debug::GetShaderCorpusName();
-     const std::string outputFilePath = 
+     const std::string outputFilePath =
 -#if defined(__linux__)
 +#if !defined(_WIN32)
      subFile + ".csv";
@@ -256,17 +236,17 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
  #define LINUX_RELEASE_MODE
  #endif
  
---- visa/BuildCISAIRImpl.cpp.orig	2020-09-16 10:27:28 UTC
+--- visa/BuildCISAIRImpl.cpp.orig	2021-10-29 09:43:43 UTC
 +++ visa/BuildCISAIRImpl.cpp
-@@ -576,7 +576,6 @@ extern void CISA_delete_buffer(YY_BUFFER_STATE buf);
- 
- int CISA_IR_Builder::ParseVISAText(const std::string& visaHeader, const std::string& visaText, const std::string& visaTextFile)
+@@ -925,7 +925,6 @@ static std::mutex mtx;
+ int CISA_IR_Builder::ParseVISAText(const std::string& visaText, const std::string& visaTextFile)
  {
+     const std::lock_guard<std::mutex> lock(mtx);
 -#if defined(__linux__) || defined(_WIN64) || defined(_WIN32)
      // Direct output of parser to null
  #if defined(_WIN64) || defined(_WIN32)
      CISAout = fopen("nul", "w");
-@@ -627,16 +626,11 @@ int CISA_IR_Builder::ParseVISAText(const std::string& 
+@@ -973,16 +972,11 @@ int CISA_IR_Builder::ParseVISAText(const std::string& 
      }
  
      return status;
@@ -283,7 +263,7 @@ CMake Error at IGC/CMakeLists.txt:1974 (message):
      // Direct output of parser to null
  #if defined(_WIN64) || defined(_WIN32)
      CISAout = fopen("nul", "w");
-@@ -662,10 +656,6 @@ int CISA_IR_Builder::ParseVISAText(const std::string& 
+@@ -1008,10 +1002,6 @@ int CISA_IR_Builder::ParseVISAText(const std::string& 
          fclose(CISAout);
      }
      return VISA_SUCCESS;

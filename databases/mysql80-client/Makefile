@@ -14,10 +14,10 @@ PKGMESSAGE=	${.CURDIR}/pkg-message
 PATCHDIR=	${MASTERDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
 
-CONFLICTS_INSTALL=	mysql8[1-9]-client-* \
-			mysql[0-79][0-9]-client-* \
-			mariadb[0-9][0-9]-client-* \
-			percona[0-9][0-9]-client-*
+CONFLICTS_INSTALL=	mysql8[1-9]-client \
+			mysql[0-79][0-9]-client \
+			mariadb[0-9][0-9]-client \
+			percona[0-9][0-9]-client
 
 CMAKE_ARGS+=	-DWITHOUT_SERVER=1 -DINSTALL_SUPPORTFILESDIR=0
 
@@ -36,6 +36,7 @@ SASLCLIENT_DESC=	SASL client plugin module
 SASLCLIENT_CMAKE_BOOL=	WITH_AUTHENTICATION_LDAP
 SASLCLIENT_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 SASLCLIENT_USE=		OPENLDAP=yes
+
 OPTIONS_DEFAULT+=	SASLCLIENT
 OPTIONS_SUB=	yes
 

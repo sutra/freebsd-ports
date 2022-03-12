@@ -1,6 +1,5 @@
 PORTNAME=	asterisk
-PORTVERSION=	16.22.0
-PORTREVISION=	1
+PORTVERSION=	16.24.1
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -53,7 +52,7 @@ MAKE_ARGS+=	NOISY_BUILD=yes \
 		ASTDATADIR=${DATADIR}
 
 CONFLICTS=		ossp-uuid
-CONFLICTS_BUILD=	linuxthreads-*
+CONFLICTS_BUILD=	linuxthreads
 CONFLICTS_INSTALL=	asterisk13 asterisk18
 
 OPTIONS_DEFINE=			ASTVERSION BACKTRACE CURL EXCHANGE FREETDS G729 LDAP LUA MACRO \
@@ -241,6 +240,7 @@ post-extract-OPUS-on:
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/samples/musiconhold.conf.sample
+	@${REINPLACE_CMD} -e 's/@XMLSTARLET@//' ${WRKSRC}/makeopts.in
 .if exists(${FILESDIR}/.asterisk.makeopts)
 	${CP} ${FILESDIR}/.asterisk.makeopts ${WRKSRC}/menuselect.makeopts
 .endif

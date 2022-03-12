@@ -5,7 +5,7 @@ PORTVERSION=	0.4.15
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	koobs@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	File type identification using libmagic
 
 LICENSE=	MIT
@@ -18,7 +18,7 @@ USE_PYTHON=	autoplist distutils
 GH_ACCOUNT=	ahupp
 
 # both install module as magic.py
-CONFLICTS=	${PYTHON_PKGNAMEPREFIX}magic-*
+CONFLICTS=	${PYTHON_PKGNAMEPREFIX}magic
 
 NO_ARCH=	yes
 

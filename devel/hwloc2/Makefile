@@ -1,5 +1,5 @@
 PORTNAME=	hwloc
-DISTVERSION=	2.5.0
+DISTVERSION=	2.7.0
 CATEGORIES=	devel
 MASTER_SITES=	https://download.open-mpi.org/release/hwloc/v${PORTVERSION:R}/
 PKGNAMESUFFIX=	2
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess
 USES=		iconv libtool gnome pathfix pkgconfig tar:bzip2
 USE_GNOME=	libxml2
 
-CONFLICTS_INSTALL=	hwloc-[0-9]*
+CONFLICTS_INSTALL=	hwloc
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-static \

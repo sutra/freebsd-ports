@@ -1,9 +1,8 @@
 # Created by: Tom Judge <tj@FreeBSD.org>
 
 PORTNAME=	kibana
-PORTVERSION=	7.15.1
+PORTVERSION=	7.16.3
 DISTVERSIONSUFFIX=	-darwin-x86_64
-PORTREVISION=	2
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
 		http://artifacts.elastic.co/downloads/kibana/
@@ -15,11 +14,11 @@ COMMENT=	Browser based analytics and search interface to ElasticSearch
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	npm-node14>0:www/npm-node14
+BUILD_DEPENDS=	npm-node16>0:www/npm-node16
 LIB_DEPENDS=	libre2.so:devel/re2 \
 		libuv.so:devel/libuv
 
-USES=		compiler:c++14-lang cpe nodejs:14,build,run python:build
+USES=		compiler:c++14-lang cpe nodejs:16,build,run python:build
 CPE_VENDOR=	elastic
 
 USE_GITHUB=	nodefault
@@ -40,7 +39,7 @@ SUB_LIST+=	PKGNAMESUFFIX=${PKGNAMESUFFIX} \
 # Set node-nan version here
 _NODE_NAN_VER=	2.15.0
 # Set node-re version here
-_NODE_RE2_VER=	1.16.0
+_NODE_RE2_VER=	1.17.1
 #######################################################################
 
 _NODECMD=	${LOCALBASE}/bin/node --version

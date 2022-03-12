@@ -21,9 +21,11 @@
     SUBDIR += p5-FreeBSD-Ports
     SUBDIR += p5-FreeBSD-Ports-INDEXhash
     SUBDIR += packagekit
+    SUBDIR += parfetch-overlay
     SUBDIR += pchecker
     SUBDIR += pkg
     SUBDIR += pkg-devel
+    SUBDIR += pkg-graph
     SUBDIR += pkg-provides
     SUBDIR += pkg-rmleaf
     SUBDIR += pkg_cleanup
@@ -40,6 +42,7 @@
     SUBDIR += port-maintenance-tools
     SUBDIR += portal
     SUBDIR += portconf
+    SUBDIR += portconfig
     SUBDIR += portdowngrade
     SUBDIR += portest
     SUBDIR += portfind
@@ -67,6 +70,7 @@
     SUBDIR += py-FreeBSD-ports
     SUBDIR += py-pytoport
     SUBDIR += py-skog
+    SUBDIR += sccache-overlay
     SUBDIR += synth
     SUBDIR += wanted-ports
 

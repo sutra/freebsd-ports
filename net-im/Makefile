@@ -17,7 +17,6 @@
     SUBDIR += dino
     SUBDIR += echat
     SUBDIR += ejabberd
-    SUBDIR += ekiga
     SUBDIR += farstream
     SUBDIR += finch
     SUBDIR += folks
@@ -26,6 +25,7 @@
     SUBDIR += gajim
     SUBDIR += gitterdone
     SUBDIR += gloox
+    SUBDIR += gomuks
     SUBDIR += icmpchat
     SUBDIR += icqlib
     SUBDIR += jabber.el
@@ -115,6 +115,7 @@
     SUBDIR += psi
     SUBDIR += purple-discord
     SUBDIR += purple-facebook
+    SUBDIR += purple-googlechat
     SUBDIR += purple-hangouts
     SUBDIR += purple-mattermost
     SUBDIR += purple-plugin-pack
@@ -181,7 +182,6 @@
     SUBDIR += toxins
     SUBDIR += tut
     SUBDIR += twirssi
-    SUBDIR += twitmail
     SUBDIR += uTox
     SUBDIR += vqcc-gtk
     SUBDIR += xmpp-client

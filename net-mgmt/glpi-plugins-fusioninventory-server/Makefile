@@ -19,9 +19,10 @@ GH_ACCOUNT=	fusioninventory
 GH_PROJECT=	fusioninventory-for-glpi
 GH_TAGNAME=	glpi090+${FUNV_VER}
 USE_PHP=	fileinfo simplexml
+IGNORE_WITH_PHP=	81
 
 GLPI_VER=	9.5.0
-FUNV_VER=	1.0
+FUNV_VER=	1.5
 NO_BUILD=	yes
 NO_ARCH=	yes
 

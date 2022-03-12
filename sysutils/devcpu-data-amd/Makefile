@@ -1,6 +1,5 @@
 PORTNAME=	data
-PORTVERSION=	20211109
-PORTREVISION=	2
+PORTVERSION=	20220221
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/amd-ucode/
 PKGNAMEPREFIX=	devcpu-
@@ -10,7 +9,7 @@ DISTFILES=	microcode_amd.bin?id=${_REV} \
 		microcode_amd_fam16h.bin?id=${_REV} \
 		microcode_amd_fam17h.bin?id=${_REV} \
 		microcode_amd_fam19h.bin?id=${_REV}
-DIST_SUBDIR=	${PKGNAME:C/_.*$//}
+DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	AMD CPUs microcode updates
@@ -32,7 +31,7 @@ DATADIR=	${PREFIX}/share/cpucontrol
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	${DISTFILES:S/^/${DATADIR}\//g:C/\?.*//}
 
-_REV=		4e9f60f2556586246db811e8146798cd1c584604
+_REV=		3c60818505d8b27e8716717d202a3068cf757ca5
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/

@@ -1,8 +1,7 @@
 # Created by: Alex Dupre <ale@FreeBSD.org>
 
 PORTNAME=	solidity
-PORTVERSION=	0.8.9
-PORTREVISION=	1
+PORTVERSION=	0.8.12
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ethereum/solidity/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -16,6 +15,7 @@ NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe sparc64
 NOT_FOR_ARCHS_REASON=	solidity currently does not support big endian systems
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs \
+		libfmt>=0:devel/libfmt \
 		range-v3>=0:devel/range-v3
 LIB_DEPENDS=	libjsoncpp.so:devel/jsoncpp
 
@@ -34,14 +34,15 @@ CVC4_CMAKE_OFF=	USE_CVC4
 CMAKE_ARGS+=	-DUSE_LD_GOLD=OFF -DTESTS=OFF \
 		-DRANGE_V3_INCLUDE_DIR="${LOCALBASE}/include" \
 		-DJSONCPP_INCLUDE_DIR:STRING="${LOCALBASE}/include/jsoncpp" \
-		-DJSONCPP_LIB_DIR:STRING="${LOCALBASE}/lib"
+		-DJSONCPP_LIB_DIR:STRING="${LOCALBASE}/lib" \
+		-DSTRICT_Z3_VERSION=OFF
 
 PLIST_FILES=	bin/solc \
 		bin/solidity-upgrade \
 		bin/yul-phaser
 
 pre-patch:
-		@${CP} ${FILESDIR}/jsoncpp.cmake ${WRKSRC}/cmake/
+		@${CP} ${FILESDIR}/fmtlib.cmake ${FILESDIR}/jsoncpp.cmake ${WRKSRC}/cmake/
 		@${REINPLACE_CMD} '/EthCcache/d' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

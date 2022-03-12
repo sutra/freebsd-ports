@@ -44,12 +44,12 @@ $checkmfiles = 0;
 $contblank = 1;
 $portdir = '.';
 
-@ALLOWED_FULL_PATHS = qw(/boot/loader.conf /compat/ /dev/null /etc/inetd.conf);
+@ALLOWED_FULL_PATHS = qw(/boot/loader.conf /compat/ /dev/null /etc/fstab /etc/inetd.conf /proc);
 
 # version variables
 my $major = 2;
 my $minor = 19;
-my $micro = 8;
+my $micro = 10;
 
 # default setting - for FreeBSD
 my $portsdir = '/usr/ports';
@@ -154,13 +154,14 @@ chdir "$portdir" || die "$portdir: $!";
 
 # get make vars
 my @varlist =  qw(
-	PORTNAME PORTVERSION PORTREVISION PORTEPOCH PKGNAME PKGNAMEPREFIX
-	PKGNAMESUFFIX DISTVERSIONPREFIX DISTVERSION DISTVERSIONSUFFIX
-	DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER MASTER_SITES
-	WRKDIR WRKSRC NO_WRKSUBDIR SCRIPTDIR FILESDIR
+	PORTNAME PORTVERSION PORTREVISION PORTEPOCH PKGNAME PKGBASE
+	PKGNAMEPREFIX PKGNAMESUFFIX DISTVERSIONPREFIX DISTVERSION
+	DISTVERSIONSUFFIX DISTNAME DISTFILES CATEGORIES MASTERDIR MAINTAINER
+	MASTER_SITES WRKDIR WRKSRC NO_WRKSUBDIR SCRIPTDIR FILESDIR
 	PKGDIR COMMENT DESCR PLIST PKGCATEGORY PKGINSTALL PKGDEINSTALL
 	PKGREQ PKGMESSAGE DISTINFO_FILE .CURDIR USE_LDCONFIG USE_AUTOTOOLS
-	USE_GNOME USE_PERL5 USE_QT USE_QT5 INDEXFILE PKGORIGIN CONFLICTS PKG_VERSION
+	USE_GNOME USE_PERL5 USE_QT USE_QT5 INDEXFILE PKGORIGIN
+	CONFLICTS CONFLICTS_BUILD CONFLICTS_INSTALL PKG_VERSION
 	PLIST_FILES PLIST_DIRS PORTDOCS PORTEXAMPLES
 	OPTIONS_DEFINE OPTIONS_RADIO OPTIONS_SINGLE OPTIONS_MULTI
 	OPTIONS_GROUP OPTIONS_SUB INSTALLS_OMF USE_RC_SUBR USES DIST_SUBDIR
@@ -812,13 +813,6 @@ sub checkplist {
 			$found_so++;
 		}
 
-		if ($_ =~ m|^share/icons/.*/| &&
-			$makevar{INSTALLS_ICONS} eq '' &&
-			needs_installs_icons()) {
-			&perror("WARN", $file, $., "installing icons, ".
-				"please define INSTALLS_ICONS as appropriate");
-		}
-
 		if ($_ =~ m|\.omf$| && $makevar{INSTALLS_OMF} eq '') {
 			&perror("WARN", $file, $., "installing OMF files, ".
 				"please define INSTALLS_OMF (see the FreeBSD GNOME ".
@@ -1161,7 +1155,9 @@ sub check_depends_syntax {
 			if ($k eq '') {
 				next;
 			}
-			my @l = split(':', $k);
+			my ($tmp_depends, $fl) = split(/\@/, $k);
+			$tmp_depends =~ s/\$\{[^}]+}//g;
+			my @l = split(':', $tmp_depends);
 
 			print "OK: checking dependency value for $j.\n"
 				if ($verbose);
@@ -1180,8 +1176,7 @@ sub check_depends_syntax {
 			}
 			my %m = ();
 			$m{'dep'} = $l[0];
-			my ($di, $fl) = split(/\@/, $l[1]);
-			$m{'dir'} = $di;
+			$m{'dir'} = $l[1];
 			$m{'fla'} = $fl // '';
 			$m{'tgt'} = $l[2] // '';
 			my %depmvars = ();
@@ -1378,6 +1373,7 @@ sub checkmakefile {
 	my $docsused = 0;
 	my $optused = 0;
 	my $desktop_entries = '';
+	my $conflicts = "";
 
 	my $masterdir = $makevar{MASTERDIR};
 	if ($masterdir ne '' && $masterdir ne $makevar{'.CURDIR'}) {
@@ -1567,12 +1563,6 @@ sub checkmakefile {
 					"ends in \".core\".  This file may be deleted if ".
 					"daily_clean_disks_enable=\"YES\" in /etc/periodic.conf.  ".
 					"If possible, install this file with a different name.");
-			}
-			if ($plist_file =~ m|^share/icons/.*/| &&
-				$makevar{INSTALLS_ICONS} eq '' &&
-		        needs_installs_icons()) {
-				&perror("WARN", "", -1, "PLIST_FILES: installing icons, ".
-					"please define INSTALLS_ICONS as appropriate");
 			}
 			if ($plist_file =~ /%%[\w_\d]+%%/) {
 				&perror("FATAL", "", -1, "PLIST_FILES: files cannot contain ".
@@ -2001,9 +1991,8 @@ sub checkmakefile {
 	#
 	# whole file: using INSTALLS_ICONS when it is not wanted
 	#
-	if (!($makevar{INSTALLS_ICONS} eq '') &&
-		!needs_installs_icons()) {
-		&perror("WARN", $file, -1, "INSTALLS_ICONS is set, but should not be.");
+	if (!($makevar{INSTALLS_ICONS} eq '')) {
+		&perror("WARN", $file, -1, "INSTALLS_ICONS is now deprecated.  It should be removed.");
 	}
 
 	#
@@ -2172,6 +2161,7 @@ xargs xmkmf
 				next;
 			}
 			if ($curline =~ /(?:^|\s)[\@\-]{0,2}$i(?:$|\s)/
+				&& $curline !~ /^PORTNAME=[^\n]+$i/m
 				&& $curline !~ /^[A-Z]+_TARGET[?+]?=[^\n]+$i/m
 				&& $curline !~ /^[A-Z]+_INSTALL_TARGET[?+]?=[^\n]+$i/m
 				&& $curline !~ /^IGNORE(_[\w\d]+)?(.)?=[^\n]+$i/m
@@ -2869,7 +2859,8 @@ DIST_SUBDIR EXTRACT_ONLY
 					if ($i =~ /^$ms/ && $i ne $ms) {
 						my $ip = $i;
 						$ip =~ s/^$ms\///;
-						my $exp_sd = get_makevar($ip);
+						my (@ip_parts) = split(/:/, $ip);
+						my $exp_sd = get_makevar($ip_parts[0]);
 						if ($exp_sd eq $sd) {
 							&perror("WARN", $file, -1, "typically when you specify magic site $ms ".
 								"you do not need anything else as $sd is assumed");
@@ -2989,14 +2980,32 @@ DIST_SUBDIR EXTRACT_ONLY
 
 	$pkg_version = $makevar{PKG_VERSION};
 
-	if ($makevar{CONFLICTS}) {
+	$conflicts = $makevar{CONFLICTS};
+	if ($makevar{CONFLICTS_BUILD}) {
+		$conflicts .= " " if $conflicts;
+		$conflicts .= $makevar{CONFLICTS_BUILD};
+	}
+	if ($makevar{CONFLICTS_INSTALL}) {
+		$conflicts .= " " if $conflicts;
+		$conflicts .= $makevar{CONFLICTS_INSTALL};
+	}
+	if ($conflicts) {
 		print "OK: checking CONFLICTS.\n" if ($verbose);
-		foreach my $conflict (split ' ', $makevar{CONFLICTS}) {
-			`$pkg_version -T '$makevar{PKGNAME}' '$conflict'`;
-			my $selfconflict = !$?;
-			if ($selfconflict) {
-				&perror("FATAL", "", -1, "Package conflicts with itself. ".
-					"You should remove \"$conflict\" from CONFLICTS.");
+		my %seen;
+		foreach my $conflict (split ' ', $conflicts) {
+			if (not $seen{$conflict}) {
+#				`$pkg_version -T '$makevar{PKGBASE}' '$conflict' || $pkg_version -T '$makevar{PKGNAME}' '$conflict'`;
+#				my $selfconflict = !$?;
+#				if ($selfconflict) {
+#					&perror("FATAL", "", -1, "Package conflicts with itself. ".
+#						"You should remove \"$conflict\" from CONFLICTS.");
+#				} elsif ($conflict =~ m/-\[0-9\]\*$/) {
+				if ($conflict =~ m/-\[0-9\]\*$/) {
+					&perror("WARN", $file, -1, "CONFLICTS definition \"$conflict\" ".
+						"ends in redundant version pattern. ".
+						"You should remove \"-[0-9]*\" from that pattern.");
+				}
+				$seen{$conflict} = 1;
 			}
 		}
 	}
@@ -3930,10 +3939,6 @@ sub urlcheck {
 	&perror("FATAL", $file, -1, "URL \"$url\" contains ".
 				"extra \":\".");
 	}
-}
-
-sub needs_installs_icons {
-	return $makevar{USES} =~ /gnome/
 }
 
 sub TRUE {1;}

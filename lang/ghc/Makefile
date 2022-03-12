@@ -2,6 +2,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot \
@@ -25,6 +26,7 @@ USE_PERL5=		build
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV=		PATH=${SLAVES_PREFIX}/bin:${PATH}
 MAKE_ENV=		PATH=${SLAVES_PREFIX}/bin:${PATH}
+NO_CCACHE=		yes
 
 SUB_FILES=		build.mk
 SUB_LIST=		GHC_VERSION=${GHC_VERSION} \
