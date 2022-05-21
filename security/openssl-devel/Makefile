@@ -1,16 +1,12 @@
 # Created by: Dirk Froemberg <dirk@FreeBSD.org>
 
 PORTNAME=	openssl
-DISTVERSION=	3.0.1
+DISTVERSION=	3.0.3
 PORTREVISION=	1
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
 PKGNAMESUFFIX=	-devel
-
-PATCH_SITES=	https://github.com/openssl/openssl/commit/
-PATCHFILES=	f5485b97b6c9977c0d39c7669b9f97a879312447.patch:-p1 \
-		c2d1ad0e048dd3bfa60e6aa0b5ee343cc6d97a15.patch:-p1
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	TLSv1.3 capable SSL and crypto library
@@ -121,6 +117,7 @@ TLS1_1_IMPLIES=	TLS1_2
 EC_CONFIGURE_ON=	enable-ec_nistp_64_gcc_128
 FIPS_VARS=		shlibs+=lib/ossl-modules/fips.so
 I386_CONFIGURE_ON=	386
+KTLS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-ktls
 LEGACY_VARS=		shlibs+=lib/ossl-modules/legacy.so
 MAN3_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-util_find-doc-nits
 SHARED_MAKE_ENV=	SHLIBVER=${OPENSSL_SHLIBVER}

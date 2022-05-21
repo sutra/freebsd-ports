@@ -1,7 +1,11 @@
 PORTNAME=	plasma-workspace
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 kde kde-plasma
+
+PATCH_SITES=	https://invent.kde.org/plasma/plasma-workspace/-/commit/
+PATCHFILES=	4d3f99558cff95259590e70dfbf854a479f772ce.diff:-p1 \
+		f77b7284e39b14b0e9a8b4d2b77c0b93b2c9ea59.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 Plasma workspace
@@ -22,7 +26,8 @@ RUN_DEPENDS=	ck-launch-session:sysutils/consolekit2\
 		xsetroot:x11/xsetroot \
 		${LOCALBASE}/libdata/pkgconfig/xkeyboard-config.pc:x11/xkeyboard-config \
 		iso-codes>=0:misc/iso-codes \
-		${LOCALBASE}/bin/genv:sysutils/coreutils
+		${LOCALBASE}/bin/genv:sysutils/coreutils \
+		accountsservice>=0:sysutils/accountsservice
 
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext kde:5 \
 		pkgconfig qt:5 tar:xz xorg

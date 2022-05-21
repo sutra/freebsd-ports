@@ -23,6 +23,7 @@
     SUBDIR += gnustep-back
     SUBDIR += gnustep-gui
     SUBDIR += granite
+    SUBDIR += granite7
     SUBDIR += gstreamer1-plugins-gtk
     SUBDIR += gstreamer1-plugins-gtk4
     SUBDIR += gstreamer1-plugins-pango
@@ -46,6 +47,7 @@
     SUBDIR += gtksourceview2
     SUBDIR += gtksourceview3
     SUBDIR += gtksourceview4
+    SUBDIR += gtksourceview5
     SUBDIR += gtksourceviewmm3
     SUBDIR += guile-gnome-platform
     SUBDIR += irrlicht
@@ -145,7 +147,6 @@
     SUBDIR += pangolin
     SUBDIR += pangomm
     SUBDIR += pangox-compat
-    SUBDIR += pangoxsl
     SUBDIR += plasma5-kdeplasma-addons
     SUBDIR += plib
     SUBDIR += py-AnyQt

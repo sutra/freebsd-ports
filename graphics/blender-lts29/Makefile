@@ -1,5 +1,6 @@
 PORTNAME=	blender
 DISTVERSION=	2.93.6
+PORTREVISION=	2
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -25,7 +26,7 @@ RUN_DEPENDS=	${PYNUMPY}
 # libraries are used, if either of the most common options in blender
 # are set. We will pull boost in just to be on the safe side.
 
-USES=		cmake compiler:c++14-lang gl jpeg python:3.9 shebangfix \
+USES=		cmake compiler:c++14-lang cpe gl jpeg python:3.9 shebangfix \
 		tar:xz xorg
 USE_XORG=	x11 xext xfixes xmu xrender
 USE_GL=		gl glu glew
@@ -196,7 +197,7 @@ post-build:
 
 post-install:
 	${INSTALL_MAN} ${INSTALL_WRKSRC}/bin/${PORTNAME}.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+		${STAGEDIR}${MAN1PREFIX}/share/man/man1
 	# rename files to prevent conflict with other blender versions
 	${MV} ${STAGEDIR}${PREFIX}/share/blender \
 		${STAGEDIR}${PREFIX}/share/blender${PKGNAMESUFFIX}
@@ -207,8 +208,8 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/blender ${STAGEDIR}/${PREFIX}/bin/blender${PKGNAMESUFFIX}
 	${MV} ${STAGEDIR}${PREFIX}/bin/blender-thumbnailer.py \
 		${STAGEDIR}${PREFIX}/bin/blender${PKGNAMESUFFIX}-thumbnailer.py
-	${MV} ${STAGEDIR}${PREFIX}/man/man1/blender.1 \
-		${STAGEDIR}${PREFIX}/man/man1/blender${PKGNAMESUFFIX}.1
+	${MV} ${STAGEDIR}${PREFIX}/share/man/man1/blender.1 \
+		${STAGEDIR}${PREFIX}/share/man/man1/blender${PKGNAMESUFFIX}.1
 	${MV} ${STAGEDIR}${PREFIX}/share/applications/blender.desktop \
 		${STAGEDIR}${PREFIX}/share/applications/blender${PKGNAMESUFFIX}.desktop
 	${MV} ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps/blender.svg \

@@ -3,7 +3,7 @@
 PORTNAME=	lmms
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	audio
 
@@ -71,7 +71,6 @@ post-patch:
 		${WRKSRC}/src/core/LadspaManager.cpp
 	@${REINPLACE_CMD} -e 's/lib64/lib/' \
 		${WRKSRC}/cmake/modules/DetectMachine.cmake
-	@${REINPLACE_CMD} 's,share/man/,man/,g' ${WRKSRC}/src/CMakeLists.txt
 
 post-patch-OSS-off:
 	@${REINPLACE_CMD} \

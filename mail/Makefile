@@ -94,6 +94,8 @@
     SUBDIR += dma
     SUBDIR += dot-forward
     SUBDIR += dovecot
+    SUBDIR += dovecot-coi
+    SUBDIR += dovecot-fts-elastic
     SUBDIR += dovecot-fts-flatcurve
     SUBDIR += dovecot-fts-xapian
     SUBDIR += dovecot-pigeonhole
@@ -134,8 +136,6 @@
     SUBDIR += geary
     SUBDIR += gensig
     SUBDIR += getmail6
-    SUBDIR += gmime2
-    SUBDIR += gmime2-sharp
     SUBDIR += gmime26
     SUBDIR += gmime26-sharp
     SUBDIR += gmime30
@@ -314,7 +314,6 @@
     SUBDIR += p5-Email-Send
     SUBDIR += p5-Email-Sender
     SUBDIR += p5-Email-Sender-Transport-SMTP-TLS
-    SUBDIR += p5-Email-Sender-Transport-SMTPS
     SUBDIR += p5-Email-Sender-Transport-SQLite
     SUBDIR += p5-Email-Simple
     SUBDIR += p5-Email-Simple-FromHandle
@@ -333,7 +332,6 @@
     SUBDIR += p5-MIME-EcoEncode
     SUBDIR += p5-MIME-EncWords
     SUBDIR += p5-MIME-Explode
-    SUBDIR += p5-MIME-Fast
     SUBDIR += p5-MIME-Lite
     SUBDIR += p5-MIME-Lite-HTML
     SUBDIR += p5-MIME-Lite-TT
@@ -481,6 +479,7 @@
     SUBDIR += postsrsd
     SUBDIR += prepflog
     SUBDIR += procmail
+    SUBDIR += procmail-bgrb
     SUBDIR += proxsmtp
     SUBDIR += py-Products.SecureMailHost
     SUBDIR += py-afew
@@ -550,7 +549,6 @@
     SUBDIR += rblcheck
     SUBDIR += renattach
     SUBDIR += ripmime
-    SUBDIR += rlytest
     SUBDIR += rmilter
     SUBDIR += roundcube
     SUBDIR += roundcube-automatic_addressbook

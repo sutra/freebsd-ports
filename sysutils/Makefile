@@ -55,6 +55,7 @@
     SUBDIR += apcupsd
     SUBDIR += aptly
     SUBDIR += arcconf
+    SUBDIR += archey4
     SUBDIR += archivemount
     SUBDIR += ascpu
     SUBDIR += asfsm
@@ -73,7 +74,6 @@
     SUBDIR += autojump
     SUBDIR += automount
     SUBDIR += automounter
-    SUBDIR += autopsy
     SUBDIR += avfs
     SUBDIR += azure-agent
     SUBDIR += b2sum
@@ -274,6 +274,7 @@
     SUBDIR += diskonaut
     SUBDIR += diskscrub
     SUBDIR += disktype
+    SUBDIR += diskus
     SUBDIR += dmg2img
     SUBDIR += dmidecode
     SUBDIR += dnf
@@ -332,6 +333,7 @@
     SUBDIR += env4801
     SUBDIR += envconsul
     SUBDIR += epazote
+    SUBDIR += equinix-metal-cli
     SUBDIR += etc_os-release
     SUBDIR += etcmerge
     SUBDIR += etcupdate
@@ -359,6 +361,7 @@
     SUBDIR += file
     SUBDIR += filedupe
     SUBDIR += filelight
+    SUBDIR += filemon
     SUBDIR += fileprune
     SUBDIR += fileschanged
     SUBDIR += filetype
@@ -439,6 +442,7 @@
     SUBDIR += fusefs-zip
     SUBDIR += fvcool
     SUBDIR += fwup
+    SUBDIR += fx
     SUBDIR += g15daemon
     SUBDIR += gaffitter
     SUBDIR += ganglia-monitor-core
@@ -654,6 +658,7 @@
     SUBDIR += logstash7
     SUBDIR += logtool
     SUBDIR += logwatch
+    SUBDIR += loki
     SUBDIR += lookat
     SUBDIR += lr
     SUBDIR += lsblk
@@ -801,6 +806,7 @@
     SUBDIR += nss_ndb
     SUBDIR += nsysctl
     SUBDIR += ntfy
+    SUBDIR += ntpstat
     SUBDIR += nut
     SUBDIR += nut-devel
     SUBDIR += nvclock
@@ -872,6 +878,7 @@
     SUBDIR += p5-MogileFS-Server
     SUBDIR += p5-MogileFS-Utils
     SUBDIR += p5-Monitor-Simple
+    SUBDIR += p5-POSIX-Run-Capture
     SUBDIR += p5-Plugtools
     SUBDIR += p5-Plugtools-Plugins-HomeOU
     SUBDIR += p5-Probe-Perl
@@ -1022,6 +1029,7 @@
     SUBDIR += pxattr
     SUBDIR += pxp-agent
     SUBDIR += py-ansible-base
+    SUBDIR += py-ansible-compat
     SUBDIR += py-ansible-core
     SUBDIR += py-ansible-core211
     SUBDIR += py-ansible-lint
@@ -1165,7 +1173,6 @@
     SUBDIR += rubygem-capistrano-ext
     SUBDIR += rubygem-capistrano-harrow
     SUBDIR += rubygem-chef
-    SUBDIR += rubygem-chef-api
     SUBDIR += rubygem-chef-bin
     SUBDIR += rubygem-chef-cleanroom
     SUBDIR += rubygem-chef-config
@@ -1213,10 +1220,10 @@
     SUBDIR += rubygem-puppetfile-resolver
     SUBDIR += rubygem-puppetserver-ca
     SUBDIR += rubygem-r10k
+    SUBDIR += rubygem-redfish_client
     SUBDIR += rubygem-rubyipmi
     SUBDIR += rubygem-serverspec
     SUBDIR += rubygem-shellany
-    SUBDIR += rubygem-smart_proxy_chef
     SUBDIR += rubygem-smart_proxy_dynflow
     SUBDIR += rubygem-smart_proxy_remote_execution_ssh
     SUBDIR += rubygem-smart_proxy_salt
@@ -1318,6 +1325,7 @@
     SUBDIR += spinner
     SUBDIR += spiped
     SUBDIR += squashfs-tools
+    SUBDIR += squashfs-tools-ng
     SUBDIR += ssd_report
     SUBDIR += sshsudo
     SUBDIR += ssync
@@ -1452,6 +1460,7 @@
     SUBDIR += u-boot-rpi3-32
     SUBDIR += u-boot-rpi4
     SUBDIR += u-boot-sifive-fu540
+    SUBDIR += u-boot-sifive-fu740
     SUBDIR += u-boot-sinovoip-bpi-m3
     SUBDIR += u-boot-sopine
     SUBDIR += u-boot-sopine-spi
@@ -1519,7 +1528,6 @@
     SUBDIR += watchfolder
     SUBDIR += watchman
     SUBDIR += watchmen
-    SUBDIR += webjob
     SUBDIR += webmin
     SUBDIR += weedit
     SUBDIR += wemux
