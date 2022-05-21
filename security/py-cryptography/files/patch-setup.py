@@ -1,8 +1,8 @@
---- setup.py.orig	2021-03-25 17:19:57 UTC
+--- setup.py.orig	2022-03-15 21:36:12 UTC
 +++ setup.py
 @@ -10,23 +10,7 @@ import sys
  
- from setuptools import find_packages, setup
+ from setuptools import setup
  
 -try:
 -    from setuptools_rust import RustExtension
@@ -20,34 +20,37 @@
 -    )
 -    raise
 -
+-
+ base_dir = os.path.dirname(__file__)
  src_dir = os.path.join(base_dir, "src")
  
-@@ -41,9 +25,8 @@ with open(os.path.join(src_dir, "cryptography", "__abo
- 
- # `install_requirements` and `setup_requirements` must be kept in sync with
- # `pyproject.toml`
--setuptools_rust = "setuptools-rust>=0.11.4"
- install_requirements = ["cffi>=1.12"]
--setup_requirements = install_requirements + [setuptools_rust]
-+setup_requirements = install_requirements
- 
- if os.environ.get("CRYPTOGRAPHY_DONT_BUILD_RUST"):
-     rust_extensions = []
-@@ -129,9 +112,6 @@ try:
-                 "twine >= 1.12.0",
-                 "sphinxcontrib-spelling >= 4.0.1",
-             ],
--            "sdist": [
--                setuptools_rust,
--            ],
-             "pep8test": [
-                 "black",
-                 "flake8",
-@@ -149,7 +129,6 @@ try:
+@@ -40,20 +24,6 @@ try:
+         cffi_modules=[
              "src/_cffi_src/build_openssl.py:ffi",
-             "src/_cffi_src/build_padding.py:ffi",
          ],
--        rust_extensions=rust_extensions,
+-        rust_extensions=[
+-            RustExtension(
+-                "_rust",
+-                "src/rust/Cargo.toml",
+-                py_limited_api=True,
+-                # Enable abi3 mode if we're not using PyPy.
+-                features=(
+-                    []
+-                    if platform.python_implementation() == "PyPy"
+-                    else ["pyo3/abi3-py36"]
+-                ),
+-                rust_version=">=1.41.0",
+-            )
+-        ],
      )
  except:  # noqa: E722
      # Note: This is a bare exception that re-raises so that we don't interfere
+@@ -83,7 +53,7 @@ except:  # noqa: E722
+     )
+     print(f"    Python: {'.'.join(str(v) for v in sys.version_info[:3])}")
+     print(f"    platform: {platform.platform()}")
+-    for dist in ["pip", "setuptools", "setuptools_rust"]:
++    for dist in ["pip", "setuptools"]:
+         try:
+             version = pkg_resources.get_distribution(dist).version
+         except pkg_resources.DistributionNotFound:
