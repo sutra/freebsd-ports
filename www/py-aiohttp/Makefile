@@ -1,7 +1,7 @@
 # Created by: Kubilay Kocak <koobs@FreeBSD.org>
 
 PORTNAME=	aiohttp
-DISTVERSION=	3.7.4.post0
+DISTVERSION=	3.8.1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,7 +35,7 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_PYTHON=	autoplist distutils cython
 
 pre-configure:
-.for file in _frozenlist _helpers _http_parser _http_writer _websocket
+.for file in _helpers _http_parser _http_writer _websocket
 	@${RM} ${WRKSRC}/aiohttp/${file}.c
 	@cd ${WRKSRC} && cython-${PYTHON_VER} -3 -o aiohttp/${file}.c aiohttp/${file}.pyx -I aiohttp
 .endfor
