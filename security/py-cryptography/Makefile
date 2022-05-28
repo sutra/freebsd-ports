@@ -47,8 +47,23 @@ post-patch:
 		${WRKSRC}/src/_cffi_src/build_openssl.py
 .endif
 
+pre-install:
+	${STRIP_CMD} ${WRKSRC}/src/rust/target/release/lib${PORTNAME}_rust.so
+	${INSTALL_DATA} ${WRKSRC}/src/rust/target/release/lib${PORTNAME}_rust.so ${STAGEDIR}${PREFIX}/lib
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cryptography/hazmat/bindings/*.so
+	(cd ${STAGEDIR}${PREFIX} && \
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${PREFIX} \
+	-f ${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;})
+#	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/clvm*.so
+# Regenerate .PLIST.pymodtemp from ${STAGEDIR} since the framework
+# does not yet support Cargo.toml+pyproject.toml installs.
+	@${FIND} ${STAGEDIR} \
+		-type f -o -type l | \
+		${SORT} | \
+		${SED} -e 's|${STAGEDIR}||' \
+		> ${WRKDIR}/.PLIST.pymodtmp
 
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -q -v -rs -o addopts=
