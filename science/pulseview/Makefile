@@ -1,5 +1,3 @@
-# Created by: Uffe Jakobsen <uffe@uffe.org>
-
 PORTNAME=	pulseview
 PORTVERSION=	0.4.2
 PORTREVISION=	2
@@ -10,7 +8,7 @@ MASTER_SITES=	http://sigrok.org/download/source/pulseview/
 PATCH_SITES=	https://github.com/sigrokproject/pulseview/commit/
 PATCHFILES=	ed643f0b4ac587204a5243451cda181ee1405d62.diff:-p1
 
-MAINTAINER=	bsam@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI client that supports various hardware logic analyzers
 
 LICENSE=	GPLv3

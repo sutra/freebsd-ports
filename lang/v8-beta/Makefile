@@ -1,18 +1,18 @@
 # We follow the beta channel on https://omahaproxy.appspot.com/
-# https://chromium.googlesource.com/v8/v8/+/refs/heads/10.2-lkgr
+# https://chromium.googlesource.com/v8/v8/+/refs/heads/10.4-lkgr
 
 PORTNAME=	v8
-PORTVERSION=	10.2.154.4
+PORTVERSION=	10.4.132.20
 CATEGORIES=	lang
-MASTER_SITES=	LOCAL/sunpoet/v8/${PORTVERSION:R:R}
+MASTER_SITES=	LOCAL/sunpoet/v8/${PORTVERSION:R:R}:local
 PKGNAMESUFFIX=	-beta
-DISTFILES=	build-${BUILD_REV}.tar.gz \
-		buildtools-${BUILDTOOLS_REV}.tar.gz \
-		clang-${CLANG_REV}.tar.gz \
-		common-${COMMON_REV}.tar.gz \
-		googletest-${GOOGLETEST_REV}.tar.gz \
-		icu-${ICU_REV}.tar.gz \
-		zlib-${ZLIB_REV}.tar.gz
+DISTFILES=	build-${BUILD_REV}.tar.gz:local \
+		buildtools-${BUILDTOOLS_REV}.tar.gz:local \
+		clang-${CLANG_REV}.tar.gz:local \
+		common-${COMMON_REV}.tar.gz:local \
+		googletest-${GOOGLETEST_REV}.tar.gz:local \
+		icu-${ICU_REV}.tar.gz:local \
+		zlib-${ZLIB_REV}.tar.gz:local
 DIST_SUBDIR=	v8/${PORTVERSION:R:R}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
@@ -44,13 +44,13 @@ CPE_VENDOR=	google
 
 CONFLICTS_INSTALL=	v8
 
-BUILD_REV=	b37c340767cf9e7777d4ca5a588c34c5744df9b2
-BUILDTOOLS_REV=	c2e4795660817c2776dbabd778b92ed58c074032
-CLANG_REV=	b5e2f7c16bbf3aefc9354e8fbad3de0a543f2193
+BUILD_REV=	a56852668f892151fc97343b57af15e82db2e798
+BUILDTOOLS_REV=	8b16338d17cd71b04a6ba28da7322ab6739892c2
+CLANG_REV=	4e79fda976d9c3f12c8bfbec297bd27dd70a1343
 COMMON_REV=	d115b033c4e53666b535cbd1985ffe60badad082
 GOOGLETEST_REV=	af29db7ec28d6df1c7f0f745186884091e602e07
-ICU_REV=	1fd0dbea04448c3f73fe5cb7599f9472f0f107f1
-ZLIB_REV=	a6d209ab932df0f1c9d5b7dc67cfa74e8a3272c0
+ICU_REV=	165825933050109d8331d0faa56cc9f52460fbbf
+ZLIB_REV=	64bbf988543996eb8df9a86877b32917187eba8f
 
 # Run "gn args --list out/Release" for all variables.
 # Some parts don't have use_system_* flag, and can be turned on/off by using

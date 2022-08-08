@@ -1,8 +1,5 @@
-# Created by: Bartlomiej Rutkowski <r@robakdesign.com>
-
 PORTNAME=	ilias
-PORTVERSION=	6.17
-PORTREVISION=	1
+PORTVERSION=	6.18
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www education
 PKGNAMESUFFIX=	6${PHP_PKGNAMESUFFIX}
@@ -31,7 +28,7 @@ GH_ACCOUNT=	ILIAS-eLearning
 GH_PROJECT=	ILIAS
 
 USES=		cpe jpeg magick:6,run php
-IGNORE_WITH_PHP=	80 81
+IGNORE_WITH_PHP=	80 81 82
 
 NO_BUILD=	yes
 PLIST=		${WRKDIR}/plist

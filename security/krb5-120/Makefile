@@ -1,5 +1,3 @@
-# Created by: nectar@FreeBSD.org
-
 PORTNAME=		krb5
 PORTVERSION=		1.20
 CATEGORIES=		security
@@ -18,6 +16,8 @@ LICENSE=		MIT
 
 CONFLICTS=		heimdal krb5 krb5-*
 CONFLICTS_BUILD=	boringssl
+
+IGNORE_SSL=		libressl libressl-devel
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USES=			compiler:c++11-lang cpe gmake gettext-runtime \

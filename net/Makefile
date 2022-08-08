@@ -136,12 +136,9 @@
     SUBDIR += dual-dhclient-daemon
     SUBDIR += easysoap
     SUBDIR += echoping
-    SUBDIR += elixir-kafka_ex
-    SUBDIR += elixir-oauth2
     SUBDIR += empty
     SUBDIR += endlessh
     SUBDIR += enet
-    SUBDIR += erlang-ranch
     SUBDIR += eternalterminal
     SUBDIR += evans
     SUBDIR += eventviews
@@ -170,6 +167,8 @@
     SUBDIR += frp
     SUBDIR += frr7
     SUBDIR += frr7-pythontools
+    SUBDIR += frr8
+    SUBDIR += frr8-pythontools
     SUBDIR += fspclient
     SUBDIR += fspd
     SUBDIR += fsplib
@@ -189,6 +188,7 @@
     SUBDIR += gmid
     SUBDIR += gnet2
     SUBDIR += gnetcat
+    SUBDIR += gnome-connections
     SUBDIR += gnome-nettool
     SUBDIR += gnome-online-accounts
     SUBDIR += gnome-online-miners
@@ -241,12 +241,14 @@
     SUBDIR += haproxy22
     SUBDIR += haproxy23
     SUBDIR += haproxy24
+    SUBDIR += haproxy25
     SUBDIR += hblock
     SUBDIR += hexinject
     SUBDIR += hlmaster
     SUBDIR += honeyd
     SUBDIR += hostapd
     SUBDIR += hostapd-devel
+    SUBDIR += hostapd29
     SUBDIR += hping3
     SUBDIR += hsflowd
     SUBDIR += htpdate
@@ -316,7 +318,6 @@
     SUBDIR += kimap
     SUBDIR += kio-gdrive
     SUBDIR += kippo
-    SUBDIR += kissd
     SUBDIR += kitinerary
     SUBDIR += kldap
     SUBDIR += kmailtransport
@@ -361,7 +362,6 @@
     SUBDIR += libfabric
     SUBDIR += libfb
     SUBDIR += libfixbuf
-    SUBDIR += libgnetwork
     SUBDIR += libgravatar
     SUBDIR += libgrss
     SUBDIR += libgweather
@@ -391,6 +391,7 @@
     SUBDIR += libopennet
     SUBDIR += liboping
     SUBDIR += libosip2
+    SUBDIR += libpaho-mqtt3
     SUBDIR += libpcap
     SUBDIR += libpcapnav
     SUBDIR += libpfctl
@@ -417,6 +418,7 @@
     SUBDIR += libvncserver
     SUBDIR += libwebsockets
     SUBDIR += libyang
+    SUBDIR += libyang2
     SUBDIR += libzapojit
     SUBDIR += libzmq2
     SUBDIR += libzmq3
@@ -466,7 +468,6 @@
     SUBDIR += mpd-l2tp-ipv6pd-client
     SUBDIR += mpd5
     SUBDIR += mpich
-    SUBDIR += mpich2
     SUBDIR += mpifx
     SUBDIR += mping
     SUBDIR += mptsd
@@ -494,6 +495,7 @@
     SUBDIR += ndpi
     SUBDIR += ndproxy
     SUBDIR += neatvnc
+    SUBDIR += nemesis
     SUBDIR += nepenthes
     SUBDIR += net6
     SUBDIR += netatalk3
@@ -543,12 +545,14 @@
     SUBDIR += onedrive
     SUBDIR += onenetd
     SUBDIR += onioncat
+    SUBDIR += onionprobe
     SUBDIR += ooni-mini
     SUBDIR += ooni-probe-cli
     SUBDIR += opal
     SUBDIR += open-isns
     SUBDIR += openbgpd
     SUBDIR += openbgpd6
+    SUBDIR += openbgpd7
     SUBDIR += openldap24-client
     SUBDIR += openldap24-server
     SUBDIR += openldap25-client
@@ -976,7 +980,6 @@
     SUBDIR += pecl-xmlrpc
     SUBDIR += pecl-zmq
     SUBDIR += pen
-    SUBDIR += pfinger
     SUBDIR += php74-ldap
     SUBDIR += php74-soap
     SUBDIR += php74-sockets
@@ -987,6 +990,9 @@
     SUBDIR += php81-ldap
     SUBDIR += php81-soap
     SUBDIR += php81-sockets
+    SUBDIR += php82-ldap
+    SUBDIR += php82-soap
+    SUBDIR += php82-sockets
     SUBDIR += phpldapadmin
     SUBDIR += pichi
     SUBDIR += pimcommon
@@ -1021,6 +1027,7 @@
     SUBDIR += py-amqp
     SUBDIR += py-amqplib
     SUBDIR += py-avahi
+    SUBDIR += py-cepa
     SUBDIR += py-cjdns
     SUBDIR += py-cloudflare-scrape
     SUBDIR += py-cloudflare-scrape-js2py
@@ -1084,13 +1091,7 @@
     SUBDIR += py-pypacker
     SUBDIR += py-pypcap
     SUBDIR += py-pyroute2
-    SUBDIR += py-pyroute2.core
-    SUBDIR += py-pyroute2.ethtool
-    SUBDIR += py-pyroute2.ipset
     SUBDIR += py-pyroute2.minimal
-    SUBDIR += py-pyroute2.ndb
-    SUBDIR += py-pyroute2.nftables
-    SUBDIR += py-pyroute2.nslink
     SUBDIR += py-pyroute2.protocols
     SUBDIR += py-pysendfile
     SUBDIR += py-pyshark
@@ -1139,8 +1140,7 @@
     SUBDIR += py-sshtunnel
     SUBDIR += py-sshuttle
     SUBDIR += py-stomp.py
-    SUBDIR += py-suds-community
-    SUBDIR += py-suds-jurko
+    SUBDIR += py-suds
     SUBDIR += py-tacacs_plus
     SUBDIR += py-terminado
     SUBDIR += py-tofu
@@ -1320,6 +1320,7 @@
     SUBDIR += rubygem-no_proxy_fix
     SUBDIR += rubygem-oauth
     SUBDIR += rubygem-oauth2
+    SUBDIR += rubygem-oauth21
     SUBDIR += rubygem-octokit
     SUBDIR += rubygem-octopress-deploy
     SUBDIR += rubygem-omniauth-auth0
@@ -1390,6 +1391,7 @@
     SUBDIR += ryu
     SUBDIR += s5cmd
     SUBDIR += sacc
+    SUBDIR += sakisafecli
     SUBDIR += samba412
     SUBDIR += samba413
     SUBDIR += samplicator
@@ -1421,6 +1423,7 @@
     SUBDIR += sipsak
     SUBDIR += skstream
     SUBDIR += sl2tps
+    SUBDIR += slackcat
     SUBDIR += smb4k
     SUBDIR += smcroute
     SUBDIR += smm++

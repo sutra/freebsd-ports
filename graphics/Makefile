@@ -118,6 +118,7 @@
     SUBDIR += curtail
     SUBDIR += cuttlefish
     SUBDIR += darktable
+    SUBDIR += darktable40
     SUBDIR += dataplot
     SUBDIR += dbow2
     SUBDIR += dc20pack
@@ -232,6 +233,7 @@
     SUBDIR += gdal
     SUBDIR += gdchart
     SUBDIR += gdk-pixbuf2
+    SUBDIR += gdk-pixbuf2-xlib
     SUBDIR += gdtclft
     SUBDIR += geeqie
     SUBDIR += gegl
@@ -274,7 +276,6 @@
     SUBDIR += glosm
     SUBDIR += glpng
     SUBDIR += glslang
-    SUBDIR += gltt
     SUBDIR += glx-utils
     SUBDIR += gmic
     SUBDIR += gmic-qt
@@ -285,7 +286,6 @@
     SUBDIR += gnome-color-manager
     SUBDIR += gnome-video-effects
     SUBDIR += gocr
-    SUBDIR += goocanvas
     SUBDIR += goocanvas2
     SUBDIR += goocanvas3
     SUBDIR += goocanvasmm2
@@ -414,6 +414,7 @@
     SUBDIR += kontrast
     SUBDIR += kooka
     SUBDIR += kphotoalbum
+    SUBDIR += kplot
     SUBDIR += kqtquickcharts
     SUBDIR += kquickimageeditor
     SUBDIR += krita
@@ -504,6 +505,7 @@
     SUBDIR += libspng
     SUBDIR += libsvg
     SUBDIR += libsvg-cairo
+    SUBDIR += libsvgtiny
     SUBDIR += libvisual
     SUBDIR += libvisual04
     SUBDIR += libvisual04-plugins
@@ -561,6 +563,7 @@
     SUBDIR += movit
     SUBDIR += mozjpeg
     SUBDIR += mscgen
+    SUBDIR += msl
     SUBDIR += mtpaint
     SUBDIR += multican
     SUBDIR += mupdf
@@ -605,6 +608,7 @@
     SUBDIR += openjpeg15
     SUBDIR += openjph
     SUBDIR += openjump
+    SUBDIR += openmvs
     SUBDIR += opennurbs
     SUBDIR += openorienteering-mapper
     SUBDIR += openrm
@@ -768,6 +772,8 @@
     SUBDIR += php80-gd
     SUBDIR += php81-exif
     SUBDIR += php81-gd
+    SUBDIR += php82-exif
+    SUBDIR += php82-gd
     SUBDIR += phplot
     SUBDIR += picpuz
     SUBDIR += piddle
@@ -848,6 +854,7 @@
     SUBDIR += py-glfw
     SUBDIR += py-glooey
     SUBDIR += py-gphoto2
+    SUBDIR += py-graphlib-backport
     SUBDIR += py-graphviz
     SUBDIR += py-graphy
     SUBDIR += py-gvgen
@@ -880,6 +887,7 @@
     SUBDIR += py-plotly
     SUBDIR += py-png
     SUBDIR += py-pointpats
+    SUBDIR += py-projpicker
     SUBDIR += py-pycha
     SUBDIR += py-pycollada
     SUBDIR += py-pydot
@@ -904,7 +912,9 @@
     SUBDIR += py-pytesseract
     SUBDIR += py-python-poppler-qt5
     SUBDIR += py-pyvips
+    SUBDIR += py-pyvista
     SUBDIR += py-pyx
+    SUBDIR += py-qpageview
     SUBDIR += py-qrencode
     SUBDIR += py-railroad-diagrams
     SUBDIR += py-rasterio

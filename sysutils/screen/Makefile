@@ -1,8 +1,6 @@
-# Created by: Andrey Chernov <ache@FreeBSD.org>
-
 PORTNAME=	screen
 PORTVERSION=	4.9.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU \
 		ftp://ftp.gnu.org/gnu/screen/ \
@@ -78,7 +76,7 @@ CFLAGS+=	-DCOLORS256
 CFLAGS+=	-DNONETHACK
 .endif
 
-.if ! ${PORT_OPTIONS:MNOSOCKETDIR}
+.if ${PORT_OPTIONS:MNOSOCKETDIR}
 CONFIGURE_ARGS+=	--disable-socket-dir
 .endif
 

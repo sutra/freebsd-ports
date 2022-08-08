@@ -1,5 +1,3 @@
-# Created by: amistry@am-productions.biz
-
 PORTNAME=	hplip-plugin
 PORTVERSION=	3.22.4
 CATEGORIES=	print
@@ -19,6 +17,8 @@ LICENSE_PERMS=	none
 ONLY_FOR_ARCHS=	amd64 i386 # arm
 
 RUN_DEPENDS=	hp-plugin:print/hplip
+
+PORTSCOUT=	ignore:1
 
 PLUGINS=	fax/plugins/fax_marvell \
 		prnt/plugins/hbpl1 \

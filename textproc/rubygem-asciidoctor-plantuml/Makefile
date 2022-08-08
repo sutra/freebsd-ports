@@ -1,7 +1,5 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	asciidoctor-plantuml
-PORTVERSION=	0.0.16
+PORTVERSION=	0.1.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

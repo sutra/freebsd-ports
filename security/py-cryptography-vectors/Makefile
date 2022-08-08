@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	cryptography-vectors
 PORTVERSION=	37.0.2
 CATEGORIES=	security python

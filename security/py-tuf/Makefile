@@ -1,5 +1,3 @@
-# Created by: Kubilay Kocak <koobs@FreeBSD.org>
-
 PORTNAME=	tuf
 PORTVERSION=	1.1.0
 CATEGORIES=	security devel python
@@ -23,5 +21,8 @@ USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 
 PYTEST_BROKEN_TESTS=	test_cleanup TestRepoExamples # uses files missing from pypi distribution
+
+post-patch:
+	@${RM} ${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>

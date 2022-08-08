@@ -1,5 +1,3 @@
-# Created by: Po-Chuan Hsieh <sunpoet@FreeBSD.org>
-
 PORTNAME=	pyjwt
 PORTVERSION=	2.4.0
 CATEGORIES=	www python
@@ -17,6 +15,8 @@ USES=		cpe python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}-pyjwt1
 
 CPE_VENDOR=	pyjwt_project
 

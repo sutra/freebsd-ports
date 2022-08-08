@@ -1,5 +1,3 @@
-# Created by: Mykola Dzham <freebsd@levsha.org.ua>
-
 PORTNAME=	lttoolbox
 PORTVERSION=	${APVER}.${APREV}
 DISTVERSIONPREFIX=	v
@@ -20,7 +18,7 @@ GH_ACCOUNT=	apertium
 USE_LDCONFIG=	yes
 
 APVER=		3.6
-APREV=		4
+APREV=		6
 
 GNU_CONFIGURE=	yes
 

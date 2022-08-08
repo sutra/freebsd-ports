@@ -1,5 +1,3 @@
-# Created by: torstenb@FreeBSD.org
-
 PORTNAME=	autoconf
 PORTVERSION=	2.13
 CATEGORIES=	devel
@@ -28,7 +26,7 @@ CONFIGURE_ENV=	AWK=${AWK} \
 STRIP=
 DATADIR=	${PREFIX}/share/autoconf${VERSION}
 NO_ARCH=	yes
-PORTSCOUT=	ignore
+PORTSCOUT=	ignore:1
 
 WRKSRC=		${WRKDIR}/autoconf
 

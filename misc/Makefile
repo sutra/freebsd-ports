@@ -13,6 +13,7 @@
     SUBDIR += artikulate
     SUBDIR += asbutton
     SUBDIR += asr-manpages
+    SUBDIR += astc-encoder
     SUBDIR += bb
     SUBDIR += bbjd
     SUBDIR += bdelta
@@ -62,7 +63,7 @@
     SUBDIR += cs
     SUBDIR += cstream
     SUBDIR += ctm
-    SUBDIR += cxxmatrix
+    SUBDIR += cuttlefish
     SUBDIR += dahdi
     SUBDIR += dahdi-kmod
     SUBDIR += dahdi-kmod26
@@ -81,13 +82,10 @@
     SUBDIR += dynomite
     SUBDIR += e2fsprogs-libblkid
     SUBDIR += e2fsprogs-libuuid
+    SUBDIR += edfbrowser
     SUBDIR += edflib
-    SUBDIR += elixir-mime
-    SUBDIR += elixir-uuid
     SUBDIR += elki
     SUBDIR += elscreen
-    SUBDIR += erlang-mimerl
-    SUBDIR += erlang-mimetypes
     SUBDIR += estic
     SUBDIR += exercism
     SUBDIR += explosions
@@ -257,7 +255,6 @@
     SUBDIR += najitool
     SUBDIR += ncnn
     SUBDIR += netron
-    SUBDIR += ngraph
     SUBDIR += nms
     SUBDIR += nn-insight
     SUBDIR += nnn
@@ -362,6 +359,7 @@
     SUBDIR += php74-calendar
     SUBDIR += php80-calendar
     SUBDIR += php81-calendar
+    SUBDIR += php82-calendar
     SUBDIR += pinfo
     SUBDIR += pipe
     SUBDIR += posixtestsuite
@@ -374,6 +372,7 @@
     SUBDIR += py-SimpleSoapy
     SUBDIR += py-SoapySDR
     SUBDIR += py-alive-progress
+    SUBDIR += py-boost-histogram
     SUBDIR += py-cinder
     SUBDIR += py-colorbrewer
     SUBDIR += py-colored
@@ -381,12 +380,14 @@
     SUBDIR += py-dictdiffer
     SUBDIR += py-eemeter
     SUBDIR += py-emoji
+    SUBDIR += py-ezc3d
     SUBDIR += py-fast-histogram
     SUBDIR += py-fleep
     SUBDIR += py-fuzzy
     SUBDIR += py-gluoncv
     SUBDIR += py-gluonnlp
     SUBDIR += py-halo
+    SUBDIR += py-histoprint
     SUBDIR += py-huepy
     SUBDIR += py-kartograph
     SUBDIR += py-log_symbols
@@ -425,6 +426,7 @@
     SUBDIR += py-toil
     SUBDIR += py-tqdm
     SUBDIR += py-tvm
+    SUBDIR += py-uhi
     SUBDIR += py-wurlitzer
     SUBDIR += py-xgboost
     SUBDIR += pyobd
@@ -482,6 +484,7 @@
     SUBDIR += susv2
     SUBDIR += susv3
     SUBDIR += susv4
+    SUBDIR += swissfileknife
     SUBDIR += sword
     SUBDIR += table.el
     SUBDIR += talkfilters
@@ -526,6 +529,7 @@
     SUBDIR += vdmfec
     SUBDIR += veles
     SUBDIR += vera
+    SUBDIR += vfc
     SUBDIR += vifm
     SUBDIR += visp
     SUBDIR += viz

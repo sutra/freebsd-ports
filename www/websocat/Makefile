@@ -1,8 +1,7 @@
-# Created by: Sergey A. Osokin <osa@FreeBSD.org>
-
 PORTNAME=	websocat
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.10.1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	osa@FreeBSD.org

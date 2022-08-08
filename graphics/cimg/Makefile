@@ -1,8 +1,6 @@
-# Created by: thierry@pompo.net
-
 PORTNAME=	cimg
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	3.1.2
+DISTVERSION=	3.1.4
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 

@@ -1,8 +1,6 @@
-# Created by: Kay Lehmann <kay_lehmann@web.de>
-
 PORTNAME=	labplot
 DISTVERSION=	2.8.2
-PORTREVISION=	15
+PORTREVISION=	19
 CATEGORIES=	math kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 
@@ -19,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgsl.so:math/gsl \
 		liblz4.so:archivers/liblz4 \
 		libspectre.so:print/libspectre \
-		libsz.so:science/szip
+		libsz.so:science/libaec
 
 USES=		bison cmake compiler:c++11-lang desktop-file-utils kde:5 qt:5 \
 		shared-mime-info tar:xz

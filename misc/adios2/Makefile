@@ -1,7 +1,6 @@
 PORTNAME=	adios2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.0
-PORTREVISION=	1
+DISTVERSION=	2.8.3
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,13 +26,13 @@ LIB_DEPENDS=	libblosc.so:archivers/c-blosc \
 		libmpi.so:net/mpich \
 		libpng.so:graphics/png \
 		libsodium.so:security/libsodium \
-		libsz.so:science/szip \
+		libsz.so:science/libaec \
 		libzmq.so:net/libzmq4 \
 		libzfp.so:devel/zfp
 RUN_DEPENDS=	bash:shells/bash \
 		${PY_DEPENDS}
 
-USES=		bison cmake compiler:c++11-lang fortran localbase:ldflags pkgconfig \
+USES=		bison cmake:testing compiler:c++11-lang fortran localbase:ldflags pkgconfig \
 		perl5 python shebangfix
 USE_LDCONFIG=	yes
 
@@ -53,5 +52,7 @@ OPTIONS_DEFINE=	DOCS
 
 DOCSDIR=	${PREFIX}/share/doc/ADIOS2
 PORTDOCS=	*
+
+# several tests fail, see https://github.com/ornladios/ADIOS2/issues/3286
 
 .include <bsd.port.mk>

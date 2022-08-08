@@ -1,9 +1,7 @@
-# Created by: Alexis Praga <alexis.praga@free.fr>
-
 PORTNAME=	ripgrep-all
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.6
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	textproc
 
 MAINTAINER=	alexis.praga@free.fr

@@ -1,5 +1,3 @@
-# Created by: gahr
-
 PORTNAME=	dcmtk
 DISTVERSIONPREFIX=	${PORTNAME:tu}-
 DISTVERSION=	3.6.7
@@ -10,6 +8,8 @@ COMMENT=	DICOM ToolKit, libraries and applications for DICOM/MEDICOM standard
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
+BROKEN_aarch64=	clang-14 crashes, see bug#264408
 
 LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libpng.so:graphics/png \

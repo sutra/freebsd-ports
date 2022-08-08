@@ -1,7 +1,7 @@
 PORTNAME=	xorgxrdp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.19.b20220329
-PORTREVISION=	1
+DISTVERSION=	0.9.80.b20220601
+#PORTREVISION=	0
 CATEGORIES=	x11-drivers
 PKGNAMESUFFIX=	-devel
 DIST_SUBDIR=	xrdp
@@ -23,8 +23,8 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	neutrinolabs
-GH_TAGNAME=	0d5cbfe
-GH_TUPLE=	neutrinolabs:xrdp:cd1af47:xrdp
+GH_TAGNAME=	a4ce59b
+GH_TUPLE=	neutrinolabs:xrdp:55215cf:xrdp
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
@@ -37,6 +37,7 @@ OPTIONS_DEFAULT=
 DRI3_DESC=	DRI3/Glamor OpenGL Support
 DRI3_CONFIGURE_ENABLE=	glamor
 DRI3_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy
+DRI3_CFLAGS=		-I${LOCALBASE}/include/libdrm
 DRI3_SUB_FILES=		pkg-message
 
 post-patch-DEBUG-on:

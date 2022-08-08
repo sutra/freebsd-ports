@@ -1,10 +1,9 @@
-# Created by: Sergey Skvortsov <skv@protey.ru>
-
-PORTNAME=	redis62
+PORTNAME=	redis
 DISTVERSION=	6.2.7
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
-DISTNAME=	redis-${PORTVERSION}
+PKGNAMESUFFIX=	62
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	Persistent key-value database with built-in net interface
@@ -20,6 +19,7 @@ MAKE_ENV=	OPTIMIZATION= \
 		V=yo
 
 OPTIONS_DEFINE=		JEMALLOC TESTS TLS TRIB
+OPTIONS_DEFAULT=	TLS
 OPTIONS_RADIO=		EXTLUA
 OPTIONS_RADIO_EXTLUA=	LUA LUAJIT LUAJITOR
 OPTIONS_SUB=		yes

@@ -1,12 +1,10 @@
-# Created by: William Grzybowski <wg@FreeBSD.org>
-
 PORTNAME=	babelfish
 DISTVERSION=	0.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	wg@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Module to work with countries and languages
 
 LICENSE=	BSD3CLAUSE

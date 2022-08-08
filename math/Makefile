@@ -179,6 +179,7 @@
     SUBDIR += asymptote
     SUBDIR += atlas
     SUBDIR += barvinok
+    SUBDIR += basic-stats
     SUBDIR += bcal
     SUBDIR += bcps
     SUBDIR += bitwise
@@ -186,6 +187,7 @@
     SUBDIR += blahtexml
     SUBDIR += blas
     SUBDIR += blasfeo
+    SUBDIR += blaspp
     SUBDIR += blaze
     SUBDIR += blazeiterative
     SUBDIR += blis
@@ -200,6 +202,7 @@
     SUBDIR += cadical
     SUBDIR += cado-nfs
     SUBDIR += calc
+    SUBDIR += calcium
     SUBDIR += calcoo
     SUBDIR += cantor
     SUBDIR += casadi
@@ -243,6 +246,7 @@
     SUBDIR += concorde
     SUBDIR += convertall
     SUBDIR += coq
+    SUBDIR += cosma
     SUBDIR += couenne
     SUBDIR += coxeter3
     SUBDIR += cppad
@@ -305,6 +309,7 @@
     SUBDIR += fastops
     SUBDIR += fcl
     SUBDIR += fcl05
+    SUBDIR += fenics-basix
     SUBDIR += fflas-ffpack
     SUBDIR += fftw
     SUBDIR += fftw-float
@@ -372,10 +377,10 @@
     SUBDIR += hexcalc
     SUBDIR += heyoka
     SUBDIR += highs
-    SUBDIR += hipmcl
     SUBDIR += hmat-oss
     SUBDIR += hpcombi
     SUBDIR += hpipm
+    SUBDIR += hptt
     SUBDIR += hs-Agda
     SUBDIR += hs-penrose
     SUBDIR += hsl
@@ -383,7 +388,6 @@
     SUBDIR += ignition-math
     SUBDIR += igraph
     SUBDIR += iml
-    SUBDIR += intervaltree
     SUBDIR += intx
     SUBDIR += ipopt
     SUBDIR += ised
@@ -396,8 +400,10 @@
     SUBDIR += jsmath-fonts
     SUBDIR += jtransforms
     SUBDIR += jts
+    SUBDIR += kahip
     SUBDIR += kalgebra
     SUBDIR += kalker
+    SUBDIR += kamis
     SUBDIR += kbruch
     SUBDIR += kcalc
     SUBDIR += kfr
@@ -410,6 +416,7 @@
     SUBDIR += lapack++
     SUBDIR += lapack95
     SUBDIR += lapacke
+    SUBDIR += lapackpp
     SUBDIR += laspack
     SUBDIR += latte-integrale
     SUBDIR += lcalc
@@ -769,6 +776,7 @@
     SUBDIR += pari_elldata
     SUBDIR += pari_galdata
     SUBDIR += pari_galpol
+    SUBDIR += pari_nflistdata
     SUBDIR += pari_nftables
     SUBDIR += pari_seadata
     SUBDIR += paritwine
@@ -789,6 +797,8 @@
     SUBDIR += php80-gmp
     SUBDIR += php81-bcmath
     SUBDIR += php81-gmp
+    SUBDIR += php82-bcmath
+    SUBDIR += php82-gmp
     SUBDIR += physcalc
     SUBDIR += picosat
     SUBDIR += piranha
@@ -832,7 +842,6 @@
     SUBDIR += py-bitvector
     SUBDIR += py-bottleneck
     SUBDIR += py-brial
-    SUBDIR += py-cdecimal
     SUBDIR += py-chaospy
     SUBDIR += py-claripy
     SUBDIR += py-cma
@@ -851,6 +860,9 @@
     SUBDIR += py-faiss
     SUBDIR += py-fastcluster
     SUBDIR += py-fastdtw
+    SUBDIR += py-fenics-basix
+    SUBDIR += py-fenics-ffcx
+    SUBDIR += py-fenics-ufl
     SUBDIR += py-flax
     SUBDIR += py-fpylll
     SUBDIR += py-fraction
@@ -871,6 +883,7 @@
     SUBDIR += py-iohexperimenter
     SUBDIR += py-ipyopt
     SUBDIR += py-jax
+    SUBDIR += py-kahip
     SUBDIR += py-keras
     SUBDIR += py-keras-applications
     SUBDIR += py-keras-preprocessing
@@ -893,6 +906,7 @@
     SUBDIR += py-ndindex
     SUBDIR += py-networkx
     SUBDIR += py-nevergrad
+    SUBDIR += py-nlopt
     SUBDIR += py-numexpr
     SUBDIR += py-numpoly
     SUBDIR += py-numpy
@@ -965,11 +979,13 @@
     SUBDIR += py-statsmodels
     SUBDIR += py-svgmath
     SUBDIR += py-sym
+    SUBDIR += py-symengine
     SUBDIR += py-sympy
     SUBDIR += py-theano
     SUBDIR += py-timple
     SUBDIR += py-topologic
     SUBDIR += py-triangle
+    SUBDIR += py-umap-learn
     SUBDIR += py-uncertainties
     SUBDIR += py-unyt
     SUBDIR += py-vincenty
@@ -1043,6 +1059,7 @@
     SUBDIR += spooles-mpich
     SUBDIR += spot
     SUBDIR += sprng
+    SUBDIR += ssht
     SUBDIR += stan
     SUBDIR += stanmath
     SUBDIR += stp
@@ -1079,6 +1096,7 @@
     SUBDIR += teyjus
     SUBDIR += timbl
     SUBDIR += tiny-bignum-c
+    SUBDIR += tlapack
     SUBDIR += tmv
     SUBDIR += tomsfastmath
     SUBDIR += topaz
@@ -1087,6 +1105,7 @@
     SUBDIR += triangle
     SUBDIR += trlan
     SUBDIR += trlib
+    SUBDIR += ttmath
     SUBDIR += tvmet
     SUBDIR += ump
     SUBDIR += units

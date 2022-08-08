@@ -51,8 +51,8 @@ INSTALLDIR=	${PREFIX}/${PKGBASE}
 NOPRECIOUSMAKEVARS=	yes
 
 JDK_MAJOR_VERSION=	8
-JDK_UPDATE_VERSION=	332
-JDK_BUILD_NUMBER=	09
+JDK_UPDATE_VERSION=	342
+JDK_BUILD_NUMBER=	07
 BSD_JDK_VERSION=	1
 JTREG_VERSION=		4.1
 JTREG_BUILD_NUMBER=	b08
@@ -203,9 +203,6 @@ LIB_DEPENDS+=	libffi.so:devel/libffi
 .if ${COMPILER_TYPE} == clang
 MAKE_ENV+=	COMPILER_WARNINGS_FATAL=false USE_CLANG=true
 CONFIGURE_ENV+=	LIBCXX="-lc++"
-.if ${COMPILER_VERSION} >= 130
-CONFIGURE_ARGS+=	--with-extra-cflags="-Wno-unused-but-set-parameter"
-.endif
 .endif
 
 # GCC is broken with PCH: https://lists.freebsd.org/pipermail/svn-src-all/2015-March/101722.html

@@ -1,5 +1,3 @@
-# Created by: antoine@FreeBSD.org
-
 PORTNAME=	sortedcontainers
 PORTVERSION=	2.4.0
 CATEGORIES=	devel python

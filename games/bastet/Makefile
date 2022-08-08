@@ -1,5 +1,3 @@
-# Created by: Michael Nottebrock <lofi@FreeBSD.org>
-
 PORTNAME=	bastet
 PORTVERSION=	0.43.2
 PORTREVISION=	2
@@ -25,7 +23,7 @@ OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bastet ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/bastet.6 ${STAGEDIR}${MAN6PREFIX}/man/man6/
+	${INSTALL_MAN} ${WRKSRC}/bastet.6 ${STAGEDIR}${MAN6PREFIX}/share/man/man6/
 	@${MKDIR} ${STAGEDIR}/var/games
 	${TOUCH} ${STAGEDIR}/var/games/bastet.scores2.sample
 	${INSTALL_DATA} ${WRKSRC}/bastet.png ${STAGEDIR}${PREFIX}/share/pixmaps/

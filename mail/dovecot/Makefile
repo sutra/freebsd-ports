@@ -1,5 +1,3 @@
-# Created by: Nagy, Attila <bra@fsn.hu>
-
 ######################################################################
 # Anytime PORTVERSION changes please bump PORTREVISION of:           #
 # - mail/dovecot-pigeonhole. See ports/146029 for an explanation.    #
@@ -9,7 +7,7 @@
 ######################################################################
 
 PORTNAME=	dovecot
-PORTVERSION=	2.3.19
+PORTVERSION=	2.3.19.1
 CATEGORIES=	mail
 MASTER_SITES=	https://dovecot.org/releases/2.3/
 

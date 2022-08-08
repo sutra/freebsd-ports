@@ -1,6 +1,6 @@
 PORTNAME=	gitleaks
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.6.1
+DISTVERSION=	8.9.0
 PORTREVISION=	1
 CATEGORIES=	devel
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
-GO_MODULE=	github.com/zricethezav/gitleaks/v7
+GO_MODULE=	github.com/zricethezav/gitleaks/v8
 GO_TARGET=	.
 PLIST_FILES=	bin/${PORTNAME}
 

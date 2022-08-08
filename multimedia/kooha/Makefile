@@ -1,8 +1,8 @@
 PORTNAME=	kooha
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.1
-PORTREVISION=	7
-CATEGORIES=	multimedia
+PORTREVISION=	9
+CATEGORIES=	multimedia wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Elegantly record your screen

@@ -1,7 +1,8 @@
 PORTNAME=	nwg-drawer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
-CATEGORIES=	x11
+PORTREVISION=	3
+CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Application drawer for sway and other wlroots compositors

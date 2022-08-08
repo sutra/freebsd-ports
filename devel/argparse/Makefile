@@ -1,5 +1,5 @@
 PORTNAME=	argparse
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -13,5 +13,6 @@ USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	p-ranav
 
-.include <bsd.port.mk>
+NO_ARCH=	yes
 
+.include <bsd.port.mk>

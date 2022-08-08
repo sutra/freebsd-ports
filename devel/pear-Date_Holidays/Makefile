@@ -1,5 +1,3 @@
-# Created by: Thomas Abthorpe <thomas@goodking.ca>
-
 PORTNAME=	Date_Holidays
 PORTVERSION=	0.21.8
 PORTREVISION=	2
@@ -19,6 +17,8 @@ GH_ACCOUNT=	pear
 GH_TAGNAME=	a3fc96f
 
 NO_ARCH=	yes
+
+PORTSCOUT=	ignore:1
 
 OPTIONS_DEFINE=	PEAR_CONSOLE_GETARGS
 PEAR_CONSOLE_GETARGS_DESC=	Console::Getargs support

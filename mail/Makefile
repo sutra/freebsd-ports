@@ -39,6 +39,7 @@
     SUBDIR += c-sig
     SUBDIR += cclient
     SUBDIR += claws-mail
+    SUBDIR += claws-mail-acpi_notifier
     SUBDIR += claws-mail-address_keeper
     SUBDIR += claws-mail-archive
     SUBDIR += claws-mail-att_remover
@@ -49,6 +50,7 @@
     SUBDIR += claws-mail-dillo
     SUBDIR += claws-mail-fetchinfo
     SUBDIR += claws-mail-gdata
+    SUBDIR += claws-mail-keyword_warner
     SUBDIR += claws-mail-libravatar
     SUBDIR += claws-mail-litehtml_viewer
     SUBDIR += claws-mail-mailmbox
@@ -235,6 +237,7 @@
     SUBDIR += minimalist
     SUBDIR += missey
     SUBDIR += mlmmj
+    SUBDIR += mlmmj-archiver
     SUBDIR += mlmmj-webview
     SUBDIR += mls
     SUBDIR += mmh
@@ -260,6 +263,7 @@
     SUBDIR += notmuch-emacs
     SUBDIR += notmuch-mutt
     SUBDIR += nullmailer
+    SUBDIR += openarc
     SUBDIR += opendkim
     SUBDIR += opendmarc
     SUBDIR += opensmtpd
@@ -452,6 +456,7 @@
     SUBDIR += php74-imap
     SUBDIR += php80-imap
     SUBDIR += php81-imap
+    SUBDIR += php82-imap
     SUBDIR += phplist
     SUBDIR += phpmailer
     SUBDIR += phpmailer6
@@ -559,12 +564,9 @@
     SUBDIR += roundcube-html5_notifier
     SUBDIR += roundcube-identity_smtp
     SUBDIR += roundcube-login_info
-    SUBDIR += roundcube-mobilecube
-    SUBDIR += roundcube-mvision2
     SUBDIR += roundcube-sauserprefs
     SUBDIR += roundcube-thunderbird_labels
     SUBDIR += roundcube-twofactor_gauthenticator
-    SUBDIR += roundcube-umich
     SUBDIR += roundcube-veximaccountadmin
     SUBDIR += roundcube-yubikey_auth
     SUBDIR += rspamd
@@ -606,7 +608,6 @@
     SUBDIR += rubygem-roadie-rails-rails52
     SUBDIR += rubygem-roadie3
     SUBDIR += rubygem-ruby-qmail
-    SUBDIR += rubygem-tmail
     SUBDIR += rubygem-valid_email
     SUBDIR += rubygem-vmail
     SUBDIR += s-nail
