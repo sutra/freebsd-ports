@@ -129,6 +129,7 @@
     SUBDIR += bksh
     SUBDIR += bkt
     SUBDIR += boot-extract
+    SUBDIR += bottom
     SUBDIR += boxbackup-devel
     SUBDIR += bpytop
     SUBDIR += brasero
@@ -137,6 +138,7 @@
     SUBDIR += bsd-splash-changer
     SUBDIR += bsdconfig
     SUBDIR += bsdcrashtar
+    SUBDIR += bsdebfetch
     SUBDIR += bsdfan
     SUBDIR += bsdhwmon
     SUBDIR += bsdinfo
@@ -261,6 +263,7 @@
     SUBDIR += deltup
     SUBDIR += desktop-installer
     SUBDIR += detox
+    SUBDIR += devctl-jail-kmod
     SUBDIR += devcpu-data
     SUBDIR += devcpu-data-amd
     SUBDIR += devcpu-data-intel
@@ -324,6 +327,7 @@
     SUBDIR += dwatch-json
     SUBDIR += dwatch-pwsnoop
     SUBDIR += e2fsprogs
+    SUBDIR += e2fsprogs-core
     SUBDIR += e2tools
     SUBDIR += ebsnvme-id
     SUBDIR += ec2-scripts
@@ -661,6 +665,7 @@
     SUBDIR += logstash-forwarder
     SUBDIR += logstash6
     SUBDIR += logstash7
+    SUBDIR += logstash8
     SUBDIR += logtool
     SUBDIR += logwatch
     SUBDIR += loki
@@ -769,6 +774,7 @@
     SUBDIR += most
     SUBDIR += mountsmb2
     SUBDIR += mping
+    SUBDIR += mprocs
     SUBDIR += mptd
     SUBDIR += msiklm
     SUBDIR += msktutil
@@ -1035,7 +1041,6 @@
     SUBDIR += pwsafe
     SUBDIR += pxattr
     SUBDIR += pxp-agent
-    SUBDIR += py-ansible-base
     SUBDIR += py-ansible-compat
     SUBDIR += py-ansible-core
     SUBDIR += py-ansible-core211
@@ -1058,6 +1063,7 @@
     SUBDIR += py-dlipower
     SUBDIR += py-docker
     SUBDIR += py-drmaa
+    SUBDIR += py-elf_diff
     SUBDIR += py-execnet
     SUBDIR += py-filelike
     SUBDIR += py-filelock
@@ -1067,10 +1073,12 @@
     SUBDIR += py-hared
     SUBDIR += py-hcloud
     SUBDIR += py-honcho
+    SUBDIR += py-howdoi
     SUBDIR += py-hpilo
     SUBDIR += py-iowait
     SUBDIR += py-ioztat
     SUBDIR += py-jailconf
+    SUBDIR += py-keep
     SUBDIR += py-leviathan
     SUBDIR += py-liquidctl
     SUBDIR += py-mitogen
@@ -1535,6 +1543,7 @@
     SUBDIR += watchfolder
     SUBDIR += watchman
     SUBDIR += watchmen
+    SUBDIR += waynergy
     SUBDIR += webmin
     SUBDIR += weedit
     SUBDIR += wemux

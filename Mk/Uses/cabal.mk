@@ -23,7 +23,9 @@
 #			argument of cabal-install utility. Used for both
 #			cabal configure and cabal build.
 #
-#  EXECUTABLES		List of executable Cabal targets to be built and installed.
+#  CABAL_EXECUTABLES	List of executable Cabal targets to be built and installed.
+#			Consult the .cabal file of the project being ported to find
+#			out possible values for this variable.
 #					default: ${PORTNAME}
 #
 #  opt_USE_CABAL	Variant of USE_CABAL to be used with options framework.
@@ -31,9 +33,10 @@
 #			Note that it works a bit differently from CABAL_FLAGS:
 #			it appends "${opt_CABAL_FLAGS}" when the option is enabled
 #			and "-${opt_CABAL_FLAGS}" otherwise.
-#  opt_EXECUTABLES	Variant of EXECUTABLES to be used with options framework.
+#  opt_CABAL_EXECUTABLES	Variant of CABAL_EXECUTABLES to be used with
+#			options framework.
 #
-#  CABAL_WRAPPER_SCRIPTS	A subset of ${EXECUTABLES} containing Haskell
+#  CABAL_WRAPPER_SCRIPTS	A subset of ${CABAL_EXECUTABLES} containing Haskell
 #			programs to be wrapped into a shell script that sets
 #			*_datadir environment variables before running the program.
 #			This is needed for Haskell programs that install their
@@ -66,14 +69,14 @@ IGNORE=		USES=cabal: invalid arguments: ${arg}
 IGNORE=		CABAL_PROJECT: invalid value: ${CABAL_PROJECT}
 .  endif
 
-.  if ${ARCH} == i386 && defined(USE_CABAL) && ${USE_CABAL:Mbasement-0.0.14}
+.  if ${ARCH} == i386 && defined(USE_CABAL) && ${USE_CABAL:Mbasement-0.0.1[4-5]}
 # Upstream issue: https://github.com/haskell-foundation/foundation/issues/565
-BROKEN=		basement-0.0.14 package doesn't compile on i386
+BROKEN=		${USE_CABAL:Mbasement-0.0.1[4-5]} package doesn't compile on i386
 .  endif
 
 PKGNAMEPREFIX?=	hs-
 
-EXECUTABLES?=	${PORTNAME}
+CABAL_EXECUTABLES?=	${PORTNAME}
 
 CABAL_CMD?=	cabal
 CABAL_PORT=	devel/hs-cabal-install
@@ -128,7 +131,7 @@ _USES_patch=	701:cabal-post-patch
 _USES_configure=301:cabal-pre-configure
 _USES_stage=	751:cabal-post-install-script
 
-BUILD_TARGET?=	${EXECUTABLES:S/^/exe:&/}
+BUILD_TARGET?=	${CABAL_EXECUTABLES:S/^/exe:&/}
 
 _use_cabal=	${USE_CABAL:O:u}
 
@@ -276,7 +279,7 @@ do-install:
 .    if defined(CABAL_WRAPPER_SCRIPTS) && !empty(CABAL_WRAPPER_SCRIPTS)
 	${MKDIR} ${STAGEDIR}${PREFIX}/${CABAL_LIBEXEC}
 .    endif
-.    for exe in ${EXECUTABLES}
+.    for exe in ${CABAL_EXECUTABLES}
 .      if defined(CABAL_WRAPPER_SCRIPTS) && ${CABAL_WRAPPER_SCRIPTS:M${exe}}
 	${INSTALL_PROGRAM} \
 		$$(find ${WRKSRC}/dist-newstyle -name ${exe} -type f -perm +111) \
@@ -300,7 +303,7 @@ do-install:
 
 .  if !defined(SKIP_CABAL_PLIST)
 cabal-post-install-script:
-.      for exe in ${EXECUTABLES}
+.      for exe in ${CABAL_EXECUTABLES}
 		${ECHO_CMD} 'bin/${exe}' >> ${TMPPLIST}
 .        if defined(CABAL_WRAPPER_SCRIPTS) && ${CABAL_WRAPPER_SCRIPTS:M${exe}}
 		${ECHO_CMD} '${CABAL_LIBEXEC}/${exe}' >> ${TMPPLIST}

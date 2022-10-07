@@ -218,10 +218,12 @@
     SUBDIR += chaco
     SUBDIR += chryzodus
     SUBDIR += chuffed
+    SUBDIR += cimod
     SUBDIR += clasp
     SUBDIR += clblas
     SUBDIR += clblast
     SUBDIR += clfft
+    SUBDIR += clingcon
     SUBDIR += clingo
     SUBDIR += cliquer
     SUBDIR += cln
@@ -247,6 +249,7 @@
     SUBDIR += convertall
     SUBDIR += coq
     SUBDIR += cosma
+    SUBDIR += costa
     SUBDIR += couenne
     SUBDIR += coxeter3
     SUBDIR += cppad
@@ -464,6 +467,7 @@
     SUBDIR += math77
     SUBDIR += mathgl
     SUBDIR += mathicsscript
+    SUBDIR += mathlibtools
     SUBDIR += mathmod
     SUBDIR += mathomatic
     SUBDIR += matio
@@ -479,6 +483,7 @@
     SUBDIR += minizinc
     SUBDIR += minizinc-ide
     SUBDIR += minizinc-solvers
+    SUBDIR += minorminer
     SUBDIR += miracl
     SUBDIR += mlpack
     SUBDIR += moab
@@ -844,6 +849,8 @@
     SUBDIR += py-brial
     SUBDIR += py-chaospy
     SUBDIR += py-claripy
+    SUBDIR += py-clingcon
+    SUBDIR += py-clingo
     SUBDIR += py-cma
     SUBDIR += py-cmaes
     SUBDIR += py-cmyt
@@ -855,6 +862,7 @@
     SUBDIR += py-cypari2
     SUBDIR += py-deap
     SUBDIR += py-dionysus
+    SUBDIR += py-docplex
     SUBDIR += py-ducc0
     SUBDIR += py-ecos
     SUBDIR += py-faiss
@@ -890,6 +898,7 @@
     SUBDIR += py-kiwisolver
     SUBDIR += py-levmar
     SUBDIR += py-libpoly
+    SUBDIR += py-lmfit
     SUBDIR += py-luminol
     SUBDIR += py-mathics
     SUBDIR += py-mathics-scanner
@@ -897,6 +906,7 @@
     SUBDIR += py-matplotlib-inline
     SUBDIR += py-matplotlib-scalebar
     SUBDIR += py-matplotlib2
+    SUBDIR += py-minorminer
     SUBDIR += py-mip
     SUBDIR += py-mixsimulator
     SUBDIR += py-moarchiving
@@ -907,6 +917,7 @@
     SUBDIR += py-networkx
     SUBDIR += py-nevergrad
     SUBDIR += py-nlopt
+    SUBDIR += py-numdifftools
     SUBDIR += py-numexpr
     SUBDIR += py-numpoly
     SUBDIR += py-numpy
@@ -957,8 +968,10 @@
     SUBDIR += py-qdldl
     SUBDIR += py-quadprog
     SUBDIR += py-random2
+    SUBDIR += py-rectangle-packer
     SUBDIR += py-roman
     SUBDIR += py-rpy2
+    SUBDIR += py-rustworkx
     SUBDIR += py-rvlib
     SUBDIR += py-scikit-umfpack
     SUBDIR += py-scs
@@ -1004,6 +1017,7 @@
     SUBDIR += randlib
     SUBDIR += rankwidth
     SUBDIR += rapid
+    SUBDIR += readstat
     SUBDIR += reduce
     SUBDIR += reduce-psl
     SUBDIR += reed-solomon
@@ -1055,6 +1069,8 @@
     SUBDIR += spblas
     SUBDIR += spectra
     SUBDIR += speedcrunch
+    SUBDIR += spfft
+    SUBDIR += spla
     SUBDIR += spooles
     SUBDIR += spooles-mpich
     SUBDIR += spot
@@ -1083,6 +1099,7 @@
     SUBDIR += suitesparse-umfpack
     SUBDIR += sundials
     SUBDIR += superlu
+    SUBDIR += superlu-dist
     SUBDIR += symengine
     SUBDIR += symmetrica
     SUBDIR += symphony

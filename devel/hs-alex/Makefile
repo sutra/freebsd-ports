@@ -5,12 +5,13 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Tool for generating lexical analysers in Haskell
+WWW=		https://www.haskell.org/alex/
 
 LICENSE=	BSD3CLAUSE
 
 USES=		cabal
 
-CABAL_WRAPPER_SCRIPTS=	${EXECUTABLES}
+CABAL_WRAPPER_SCRIPTS=	${CABAL_EXECUTABLES}
 
 OPTIONS_DEFINE=	EXAMPLES
 

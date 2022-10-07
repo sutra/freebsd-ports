@@ -1,12 +1,13 @@
 PORTNAME=	libtorrent-rasterbar
 DISTVERSION=	1.2.16 # 2.x is unusable until memory problems are resolved, see https://github.com/arvidn/libtorrent/issues/6781
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/arvidn/libtorrent/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library implementing a BitTorrent client
+WWW=		https://libtorrent.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING

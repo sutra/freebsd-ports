@@ -6,6 +6,7 @@ EXTRACT_ONLY=	${DISTNAME_DEFAULT}${_GITHUB_EXTRACT_SUFX}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Command-line interface for Cabal and Hackage
+WWW=		https://www.haskell.org/cabal/
 
 LICENSE=	BSD3CLAUSE
 
@@ -38,7 +39,7 @@ USE_CABAL=	async-2.2.4 \
 		th-compat-0.1.3 \
 		zlib-0.6.2.3_1
 
-EXECUTABLES=		cabal
+CABAL_EXECUTABLES=	cabal
 SKIP_CABAL_EXTRACT=	yes
 
 post-extract:

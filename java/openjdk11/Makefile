@@ -1,6 +1,7 @@
 PORTNAME=	openjdk
 DISTVERSIONPREFIX=	jdk-
 DISTVERSION=	${JDK_MAJOR_VERSION}.${JDK_MINOR_VERSION}.${JDK_PATCH_VERSION}+${JDK_BUILD_NUMBER}-${BSD_JDK_VERSION}
+PORTREVISION=	2
 CATEGORIES=	java devel
 PKGNAMESUFFIX?=	${JDK_MAJOR_VERSION}
 
@@ -8,6 +9,7 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT?=	Java Development Kit ${JDK_MAJOR_VERSION}
+WWW=		https://openjdk.java.net/
 
 LICENSE=	GPLv2
 
@@ -141,6 +143,12 @@ CONFIGURE_ARGS+=	--with-extra-ldflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFA
 			--with-extra-cxxflags="-Wl,-rpath=${LOCALBASE}/lib/gcc${GCC_DEFAULT}"
 .else
 MAKE_ENV+=	USE_CLANG=true
+.if ${COMPILER_VERSION} >= 130
+LLVM_VER=	12
+BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
+CC=		${LOCALBASE}/bin/clang${LLVM_VER}
+CXX=		${LOCALBASE}/bin/clang++${LLVM_VER}
+.endif
 .endif
 
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*} || ${ARCH:Mpowerpc64*}

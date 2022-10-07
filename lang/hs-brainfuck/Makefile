@@ -5,11 +5,12 @@ CATEGORIES=	lang haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Brainfuck interpreter
+WWW=		https://hackage.haskell.org/package/brainfuck
 
 LICENSE=	GPLv2
 
 USES=		cabal
 
-EXECUTABLES=	bf
+CABAL_EXECUTABLES=	bf
 
 .include <bsd.port.mk>

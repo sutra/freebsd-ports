@@ -1,11 +1,12 @@
 PORTNAME=	freeorion
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.10.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Turn-based space empire and galactic conquest game
+WWW=		https://www.freeorion.org/
 
 LICENSE=	GPLv2 CC-BY-SA-3.0
 LICENSE_COMB=	multi

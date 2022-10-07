@@ -1,11 +1,12 @@
 PORTNAME=	trilinos
 DISTVERSIONPREFIX=	trilinos-release-
 DISTVERSION=	13-4-0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Solver for multi-physics engineering and scientific problems
+WWW=		https://trilinos.github.io/
 
 LICENSE=	BSD3CLAUSE LGPL20 # Trilinos is licensed on a per-package basis. Most packages are under a BSD license, some are published under the (L)GPL.
 LICENSE_COMB=	multi

@@ -5,12 +5,13 @@ CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Parser generator for Haskell
+WWW=		https://www.haskell.org/happy/
 
 LICENSE=	BSD3CLAUSE
 
 USES=		cabal
 
-CABAL_WRAPPER_SCRIPTS=	${EXECUTABLES}
+CABAL_WRAPPER_SCRIPTS=	${CABAL_EXECUTABLES}
 
 PORTEXAMPLES=	*.ly README glr/* igloo/*
 

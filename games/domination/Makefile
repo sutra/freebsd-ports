@@ -1,6 +1,5 @@
 PORTNAME=	domination
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.2.5
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/d/D/}/${PORTVERSION}/:game \
 		http://domination.sourceforge.net/maps/
@@ -11,6 +10,7 @@ EXTRACT_ONLY=	${PORTNAME:S/d/D/}_${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Board game that is a bit like the well known game Risk
+WWW=		http://domination.sourceforge.net/
 
 LICENSE=	GPLv3
 

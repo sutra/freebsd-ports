@@ -1,11 +1,13 @@
 PORTNAME=	galera
 PORTVERSION=	26.4.12
+PORTREVISION=	1
 DISTVERSIONPREFIX=	release_
 CATEGORIES=	databases
 PKGNAMESUFFIX=	26
 
 MAINTAINER=	devel@galeracluster.com
 COMMENT=	Synchronous multi-master replication engine
+WWW=		https://galeracluster.com/
 
 LICENSE=	GPLv2
 

@@ -17,6 +17,7 @@
     SUBDIR += c-blosc
     SUBDIR += c-blosc2
     SUBDIR += cabextract
+    SUBDIR += ccmix
     SUBDIR += cmdpack
     SUBDIR += dact
     SUBDIR += deb2targz
@@ -102,6 +103,7 @@
     SUBDIR += p5-Archive-Any-Plugin-Rar
     SUBDIR += p5-Archive-Extract
     SUBDIR += p5-Archive-Extract-Libarchive
+    SUBDIR += p5-Archive-Libarchive
     SUBDIR += p5-Archive-Peek
     SUBDIR += p5-Archive-Rar
     SUBDIR += p5-Archive-SimpleExtractor
@@ -172,11 +174,11 @@
     SUBDIR += pixz
     SUBDIR += plzip
     SUBDIR += ppmd
-    SUBDIR += ppmd-7z
     SUBDIR += ppunpack
     SUBDIR += pxz
     SUBDIR += py-acefile
     SUBDIR += py-borgbackup
+    SUBDIR += py-borgbackup11
     SUBDIR += py-brotli
     SUBDIR += py-brotlicffi
     SUBDIR += py-brotlipy
@@ -269,6 +271,7 @@
     SUBDIR += zlib-ng
     SUBDIR += zoo
     SUBDIR += zopfli
+    SUBDIR += zpaqfranz
     SUBDIR += zstd
     SUBDIR += zstr
     SUBDIR += zutils

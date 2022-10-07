@@ -9,6 +9,7 @@
     SUBDIR += apel
     SUBDIR += asedit
     SUBDIR += beav
+    SUBDIR += bee-host
     SUBDIR += biew
     SUBDIR += bitedit
     SUBDIR += boiling-egg
@@ -77,6 +78,7 @@
     SUBDIR += kibi
     SUBDIR += kile
     SUBDIR += komodo-edit
+    SUBDIR += lapce
     SUBDIR += lazarus
     SUBDIR += lazarus-devel
     SUBDIR += lazarus-qt5
@@ -266,6 +268,7 @@
     SUBDIR += vigor
     SUBDIR += vile
     SUBDIR += vim
+    SUBDIR += vim-colorschemes-legacy
     SUBDIR += vscode
     SUBDIR += web-mode
     SUBDIR += with-editor

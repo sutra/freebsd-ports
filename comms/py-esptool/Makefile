@@ -1,11 +1,12 @@
 PORTNAME=	esptool
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1
+DISTVERSION=	4.2.1
 CATEGORIES=	comms python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	loader@FreeBSD.org
 COMMENT=	Utility to communicate with Espressif ESP8266 & ESP32 chips
+WWW=		https://github.com/espressif/esptool
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE

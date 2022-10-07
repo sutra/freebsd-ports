@@ -1,12 +1,12 @@
 PORTNAME=	lookatme
-PORTVERSION=	2.3.2
-PORTREVISION=	2
+PORTVERSION=	2.4.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Interactive, terminal-based markdown presenter
+WWW=		https://github.com/d0c-s4vage/lookatme
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

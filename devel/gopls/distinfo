@@ -1,5 +1,5 @@
-TIMESTAMP = 1657878417
-SHA256 (go/devel_gopls/gopls-v0.9.1/v0.9.1.mod) = b66cfb1650d5a45cdc0fab3d3ad5219e9ca111d505247eb9d4ed8141be5f1fb9
-SIZE (go/devel_gopls/gopls-v0.9.1/v0.9.1.mod) = 835
-SHA256 (go/devel_gopls/gopls-v0.9.1/v0.9.1.zip) = b2ab327c5090c4b11f893b445b9cd2b7c270a1abceea663516d39308181385e7
-SIZE (go/devel_gopls/gopls-v0.9.1/v0.9.1.zip) = 190827
+TIMESTAMP = 1662819595
+SHA256 (go/devel_gopls/gopls-v0.9.5/v0.9.5.mod) = 8d16918d7be59af4dcd1c8797b3e689ec3643c2d7f37900d35a59bb3932c4d0d
+SIZE (go/devel_gopls/gopls-v0.9.5/v0.9.5.mod) = 839
+SHA256 (go/devel_gopls/gopls-v0.9.5/v0.9.5.zip) = e4ae5622997a9725b818f34daaf5784f1d56611ab6bedd0c4eec399123c76749
+SIZE (go/devel_gopls/gopls-v0.9.5/v0.9.5.zip) = 214632

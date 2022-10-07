@@ -1,3 +1,5 @@
-TIMESTAMP = 1657855890
-SHA256 (leanprover-community-lean-v3.45.0_GH0.tar.gz) = 92d2676e46447a62103dd17b7a5cb17ab7054dc2878be345a846fb03d8e6bcf5
-SIZE (leanprover-community-lean-v3.45.0_GH0.tar.gz) = 1913638
+TIMESTAMP = 1662004177
+SHA256 (leanprover-community-lean-v3.48.0_GH0.tar.gz) = 07e42b5b040825b6fc2b320784541e1dcc94d189db1ef9f51573ec3eaec74727
+SIZE (leanprover-community-lean-v3.48.0_GH0.tar.gz) = 1918012
+SHA256 (5eecaa0b9c860858372a22ab242566671907c913.patch) = 971765311b28bfc850803f355e9607dee5aa537565d24ffdc52562b6d874e99a
+SIZE (5eecaa0b9c860858372a22ab242566671907c913.patch) = 3218

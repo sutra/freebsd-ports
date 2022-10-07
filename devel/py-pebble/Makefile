@@ -1,5 +1,5 @@
 PORTNAME=	pebble
-PORTVERSION=	4.6.3
+PORTVERSION=	5.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,6 +7,7 @@ DISTNAME=	Pebble-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Threading and multiprocessing eye-candy
+WWW=		https://github.com/noxdafox/pebble
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE

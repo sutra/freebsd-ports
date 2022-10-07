@@ -1,11 +1,11 @@
 PORTNAME=	rsvndump
-PORTVERSION=	0.6
-PORTREVISION=	2
+PORTVERSION=	0.6.1
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remote Subversion repository dumpfile generator
+WWW=		http://rsvndump.sourceforge.net/
 
 LICENSE=	GPLv2
 

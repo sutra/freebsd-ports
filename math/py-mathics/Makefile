@@ -1,11 +1,13 @@
 PORTNAME=	Mathics3
 PORTVERSION=	5.0.2
+PORTREVISION=	1
 CATEGORIES=	math python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	General-purpose computer algebra system (CAS)
+WWW=		https://mathics.org/
 
 LICENSE=	GPLv3
 

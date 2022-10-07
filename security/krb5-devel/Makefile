@@ -4,21 +4,22 @@ CATEGORIES=		security
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=		-devel
 .endif
-HASH=			4f94e9585
-MIT_COMMIT_DATE=	2022.07.21
+HASH=			29600cf1d
+MIT_COMMIT_DATE=	2022.09.27
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		MIT implementation of RFC 4120 network authentication service
+WWW=			https://web.mit.edu/kerberos/
 
 LICENSE=		MIT
 
 USE_GITHUB=		yes
 GH_TAGNAME=		${HASH}
 
-CONFLICTS=		heimdal krb5 krb5-*
+CONFLICTS=		heimdal krb5 krb5-1*
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USE_PERL5=		build

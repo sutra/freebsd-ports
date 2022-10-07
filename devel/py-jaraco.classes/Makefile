@@ -1,11 +1,12 @@
 PORTNAME=	jaraco.classes
-PORTVERSION=	3.2.2
+PORTVERSION=	3.2.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python class routines
+WWW=		https://github.com/jaraco/jaraco.classes
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE

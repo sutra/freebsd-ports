@@ -32,6 +32,7 @@
     SUBDIR += broot
     SUBDIR += bsod
     SUBDIR += buffer
+    SUBDIR += caffe
     SUBDIR += cheat
     SUBDIR += chef
     SUBDIR += chmlib
@@ -82,6 +83,7 @@
     SUBDIR += dynomite
     SUBDIR += e2fsprogs-libblkid
     SUBDIR += e2fsprogs-libuuid
+    SUBDIR += ecflow
     SUBDIR += edfbrowser
     SUBDIR += edflib
     SUBDIR += elki
@@ -240,6 +242,7 @@
     SUBDIR += mc
     SUBDIR += mc-nox11
     SUBDIR += mdp
+    SUBDIR += meshoptimizer
     SUBDIR += metalink-checker
     SUBDIR += metalink-tools
     SUBDIR += mime-support
@@ -407,11 +410,14 @@
     SUBDIR += py-progressbar
     SUBDIR += py-progressbar2
     SUBDIR += py-pyEDFlib
+    SUBDIR += py-pyct
     SUBDIR += py-pyfiglet
     SUBDIR += py-pykml
+    SUBDIR += py-pypatent
     SUBDIR += py-pyprind
     SUBDIR += py-python-geohash
     SUBDIR += py-python-utils
+    SUBDIR += py-qiskit-machine-learning
     SUBDIR += py-scikit-fusion
     SUBDIR += py-serverfiles
     SUBDIR += py-soapy_power
@@ -436,6 +442,7 @@
     SUBDIR += qt5-examples
     SUBDIR += qt5-l10n
     SUBDIR += qt5ct
+    SUBDIR += qt6-doc
     SUBDIR += quantum++
     SUBDIR += raspberrypi-gpioshutdown
     SUBDIR += raspberrypi-userland
@@ -534,6 +541,7 @@
     SUBDIR += visp
     SUBDIR += viz
     SUBDIR += vxl
+    SUBDIR += wego
     SUBDIR += whichman
     SUBDIR += window
     SUBDIR += with

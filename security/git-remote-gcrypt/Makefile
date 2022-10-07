@@ -1,9 +1,11 @@
 PORTNAME=	git-remote-gcrypt
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	PGP-encrypt git remotes
+WWW=		https://spwhitton.name/tech/code/git-remote-gcrypt/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING

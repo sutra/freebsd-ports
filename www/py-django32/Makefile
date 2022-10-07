@@ -1,5 +1,5 @@
 PORTNAME=	django
-PORTVERSION=	3.2.15
+PORTVERSION=	3.2.16
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://www.djangoproject.com/m/releases/${PORTVERSION}/
@@ -10,6 +10,7 @@ DIST_SUBDIR=	python
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	High-level Python Web Framework
+WWW=		https://www.djangoproject.com/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

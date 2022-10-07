@@ -1,10 +1,12 @@
 PORTNAME=	jumpy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Tactical 2D shooter in fishy pixels style
+WWW=		https://fishfight.org/
 
 LICENSE=	CC-BY-NC-4.0 MIT
 LICENSE_COMB=	multi
@@ -18,7 +20,7 @@ USES=		cargo gl localbase:ldflags xorg
 USE_GITHUB=	yes
 USE_GL=		gl
 USE_XORG=	x11 xi
-GH_ACCOUNT=	fishfight
+GH_ACCOUNT=	fishfolks
 PLIST_FILES=	bin/${PORTNAME}
 PORTDATA=	*
 

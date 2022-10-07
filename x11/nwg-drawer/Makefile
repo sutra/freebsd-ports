@@ -1,11 +1,12 @@
 PORTNAME=	nwg-drawer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
-PORTREVISION=	3
+DISTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Application drawer for sway and other wlroots compositors
+WWW=		https://github.com/nwg-piotr/nwg-drawer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -36,6 +37,7 @@ PORTDATA=	desktop-directories *.css
 post-patch:
 # Respect PREFIX for *.desktop
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
+		${WRKSRC}/main.go \
 		${WRKSRC}/tools.go
 
 post-install:

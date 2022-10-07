@@ -4,6 +4,7 @@ CATEGORIES=	www databases haskell
 
 MAINTAINER=	dmitry.wagin@ya.ru
 COMMENT=	PostgREST create a REST API to an existing Postgres database
+WWW=		https://postgrest.org
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -47,7 +48,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKDIR}/default.conf ${STAGEDIR}${ETCDIR}/default.conf.sample
 	${INSTALL_PROGRAM} \
-		$$(find ${WRKSRC}/dist-newstyle -name ${EXECUTABLES} -type f -perm +111) \
-		${STAGEDIR}${PREFIX}/sbin/${EXECUTABLES}
+		$$(find ${WRKSRC}/dist-newstyle -name ${PORTNAME} -type f -perm +111) \
+		${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
 
 .include <bsd.port.mk>

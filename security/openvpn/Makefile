@@ -1,6 +1,6 @@
 PORTNAME=		openvpn
 DISTVERSION=		2.5.7
-PORTREVISION?=		1
+PORTREVISION?=		3
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
 			https://build.openvpn.net/downloads/releases/ \
@@ -8,6 +8,7 @@ MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
 
 MAINTAINER=		mandree@FreeBSD.org
 COMMENT?=		Secure IP/Ethernet tunnel daemon
+WWW=		https://openvpn.net/community/
 
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYRIGHT.GPL

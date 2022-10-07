@@ -1,10 +1,11 @@
 PORTNAME=	sbt
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	devel java
 MASTER_SITES=	https://github.com/sbt/sbt/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Build tool for Scala projects
+WWW=		https://www.scala-sbt.org/
 
 LICENSE=	APACHE20
 

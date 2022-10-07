@@ -10,6 +10,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Server part of free Worms-like turn based strategy game
+WWW=		https://www.hedgewars.org
 
 LICENSE=	GPLv2
 
@@ -67,6 +68,6 @@ USE_CABAL=	ConfigFile-1.1.4 \
 		yaml-0.11.4.0 \
 		zlib-0.6.2.1_1
 
-EXECUTABLES=	hedgewars-server checker
+CABAL_EXECUTABLES=	hedgewars-server checker
 
 .include <bsd.port.mk>

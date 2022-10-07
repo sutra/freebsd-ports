@@ -1,6 +1,6 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	23.3.4.16
+DISTVERSION=	23.3.4.18
 PORTREVISION=	0
 CATEGORIES=	lang parallel java
 PKGNAMESUFFIX=	-runtime23
@@ -8,6 +8,7 @@ DIST_SUBDIR=	erlang
 
 MAINTAINER=	erlang@FreeBSD.org
 COMMENT=	Functional programming language from Ericsson
+WWW=		https://www.erlang.org/
 
 LICENSE=	APACHE20
 

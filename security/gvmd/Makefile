@@ -1,10 +1,12 @@
 PORTNAME=	gvmd
 DISTVERSION=	22.4.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Greenbone Vulnerability Manager central management service
+WWW=		https://github.com/greenbone/gvmd
 
 LICENSE=	AGPLv3+
 

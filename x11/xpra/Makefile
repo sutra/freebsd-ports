@@ -1,11 +1,12 @@
 PORTNAME=	xpra
-PORTVERSION=	4.3
-PORTREVISION=	1
+PORTVERSION=	4.3.4
+PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	http://xpra.org/src/
+MASTER_SITES=	https://xpra.org/src/
 
 MAINTAINER=	arrowd@FreeBSD.org
 COMMENT=	Persistent remote applications for X
+WWW=		https://xpra.org/
 
 LICENSE=	GPLv2
 

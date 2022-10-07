@@ -191,6 +191,7 @@
     SUBDIR += mongodb42-tools
     SUBDIR += mongodb44
     SUBDIR += mongodb50
+    SUBDIR += mongodb60
     SUBDIR += mroonga
     SUBDIR += mtop
     SUBDIR += mydumper
@@ -227,6 +228,7 @@
     SUBDIR += ocaml-dbm
     SUBDIR += ocaml-mysql
     SUBDIR += ocaml-sqlite3
+    SUBDIR += odbc-cpp-wrapper
     SUBDIR += ods2sql
     SUBDIR += opendbviewer
     SUBDIR += opendbx
@@ -550,6 +552,7 @@
     SUBDIR += percona57-client
     SUBDIR += percona57-pam-for-mysql
     SUBDIR += percona57-server
+    SUBDIR += pg-gvm
     SUBDIR += pg.el
     SUBDIR += pgFormatter
     SUBDIR += pg_activity
@@ -577,7 +580,6 @@
     SUBDIR += pglogical
     SUBDIR += pgmetrics
     SUBDIR += pgmodeler
-    SUBDIR += pg-gvm
     SUBDIR += pgpool-II-37
     SUBDIR += pgpool-II-40
     SUBDIR += pgpool-II-41
@@ -653,6 +655,7 @@
     SUBDIR += postgis30
     SUBDIR += postgis31
     SUBDIR += postgis32
+    SUBDIR += postgis33
     SUBDIR += postgresql-cstore_fdw
     SUBDIR += postgresql-jdbc
     SUBDIR += postgresql-libpgeasy
@@ -740,6 +743,7 @@
     SUBDIR += py-Pyrseas
     SUBDIR += py-aesqlapius
     SUBDIR += py-agate-sql
+    SUBDIR += py-aiomcache
     SUBDIR += py-aiomysql
     SUBDIR += py-aiopg
     SUBDIR += py-aioredis
@@ -752,7 +756,6 @@
     SUBDIR += py-asyncmy
     SUBDIR += py-asyncpg
     SUBDIR += py-berkeleydb
-    SUBDIR += py-bsddb3
     SUBDIR += py-carbon
     SUBDIR += py-cassandra-driver
     SUBDIR += py-caterva
@@ -833,6 +836,7 @@
     SUBDIR += py-sqlalchemy12
     SUBDIR += py-sqlalchemy13
     SUBDIR += py-sqlalchemy14
+    SUBDIR += py-sqlglot
     SUBDIR += py-sqlite-fts4
     SUBDIR += py-sqlite-utils
     SUBDIR += py-sqlite3
@@ -985,7 +989,12 @@
     SUBDIR += rubygem-redis-actionpack-rails60
     SUBDIR += rubygem-redis-actionpack-rails61
     SUBDIR += rubygem-redis-actionpack52-rails61
+    SUBDIR += rubygem-redis-client
+    SUBDIR += rubygem-redis-cluster-client
+    SUBDIR += rubygem-redis-clustering
     SUBDIR += rubygem-redis-namespace
+    SUBDIR += rubygem-redis-namespace18
+    SUBDIR += rubygem-redis4
     SUBDIR += rubygem-redis44
     SUBDIR += rubygem-sdbm
     SUBDIR += rubygem-seed-fu
